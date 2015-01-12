@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>Nicholas Trampe</string>
+	<key>Picture</key>
+	<string>bio_picture.png</string>
+	<key>Button Colors</key>
+	<array>
+		<string>94, 111, 66</string>
+		<string>228, 208, 181</string>
+		<string>46, 66, 64</string>
+		<string>136, 154, 156</string>
+		<string>163, 163, 103</string>
+	</array>
+	<key>Projects</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>NTT Game Engine</string>
+			<key>Details</key>
+			<string>2013</string>
+			<key>Description Header</key>
+			<string>The NTT game engine and user interface wrapper is a framework I created to make the development of games with Cocos2D and Box2D easier.</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>Includes Box2D layers, scenes and sprites, scrollviews, paging views, table views, alert views, buttons and labels</string>
+				<string>You can see the framework in action if you download Fan Factory from the App Store</string>
+				<string>I plan to make use of SpriteKit now that I don&apos;t have any current projects using my framework</string>
+			</array>
+			<key>Image</key>
+			<string>ntt_icon.png</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Fan Factory</string>
+			<key>Details</key>
+			<string>2014</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>Physics-based puzzle game where the user adjusts fans to blow a ball to the goal crate</string>
+				<string>Uses my NTT game engine framework</string>
+				<string>Each layer dynamically adjusts itself to work on any screen size</string>
+				<string>Built-in level editor so that the user can create their very own levels, which are stored in iCloud</string>
+				<string>Each level is stored and loaded in an encrypted format so that the game can be the only application to modify a level</string>
+				<string>I wrote the code, created the artwork and designed the user interface</string>
+				<string>For the best experience, play on an iPad!</string>
+			</array>
+			<key>Image</key>
+			<string>fan_factory_icon.png</string>
+			<key>URL</key>
+			<string>https://itunes.apple.com/us/app/fan-factory/id789586621?ls=1&amp;mt=8</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>PTCB Prep</string>
+			<key>Details</key>
+			<string>2013</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>A multiple choice quiz application for iPhone and Android</string>
+				<string>First application developed under Off Kilter Studios, LLC</string>
+				<string>Pulls the questions from the client&apos;s server, so the questions can be constantly updated</string>
+				<string>Designed so that the client could easily replicate it with a different color scheme and question set</string>
+				<string>I wrote the iOS code, my business partner wrote the Android code and a third party designed the artwork</string>
+			</array>
+			<key>Image</key>
+			<string>ptcb_prep_icon.png</string>
+			<key>URL</key>
+			<string>https://itunes.apple.com/us/app/ptcb-test-prep/id590260049?mt=8</string>
+		</dict>
+		<dict>
+			<key>ScreenShots</key>
+			<array>
+				<string>moto_ss_1.png</string>
+				<string>moto_ss_2.png</string>
+				<string>moto_ss_3.png</string>
+				<string>moto_ss_4.png</string>
+				<string>moto_ss_5.png</string>
+			</array>
+			<key>Title</key>
+			<string>Motocross Sniper</string>
+			<key>Details</key>
+			<string>2012</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>First big physics game I developed for Interdisciplinary Design Collaborative</string>
+				<string>Ride a bike through a 2D course while beating the time limit and performing tricks to reduce your time</string>
+				<string>Once the user finishes, he or she is then armed with a paintball gun and attempts to shoot using the accelerometer and or gyroscope at the bike he or she just rode</string>
+				<string>The bike and the paintball gun are both fully upgradable</string>
+				<string>I developed a level editor for Mac OSX so that I could easily &quot;draw&quot; a level and test it</string>
+				<string>I wrote the iOS code and a third party designed all of the artwork</string>
+			</array>
+			<key>Image</key>
+			<string>moto_icon.png</string>
+		</dict>
+		<dict>
+			<key>ScreenShots</key>
+			<array>
+				<string>cc_ss_1.png</string>
+				<string>cc_ss_2.png</string>
+				<string>cc_ss_3.png</string>
+				<string>cc_ss_4.png</string>
+				<string>cc_ss_5.png</string>
+			</array>
+			<key>Title</key>
+			<string>Creature Catcher</string>
+			<key>Details</key>
+			<string>2012</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>Similar to the SET Game:  You try to match tiles based on their creature type, color and background</string>
+				<string>Upgrade the game with specials such as bombs, snow and lightning</string>
+				<string>I wrote the iOS code and a third party designed the artwork</string>
+			</array>
+			<key>Image</key>
+			<string>cc_icon.png</string>
+		</dict>
+		<dict>
+			<key>ScreenShots</key>
+			<array>
+				<string>spiked_ss_1.png</string>
+				<string>spiked_ss_2.png</string>
+				<string>spiked_ss_3.png</string>
+				<string>spiked_ss_4.png</string>
+				<string>spiked_ss_5.png</string>
+			</array>
+			<key>Title</key>
+			<string>Spiked!</string>
+			<key>Details</key>
+			<string>2010</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>The first iOS game that I created using UIKit</string>
+				<string>The user plays as a bat in a cave and tries to avoid falling stalactites until night arrives</string>
+				<string>The bat is fully upgradable</string>
+				<string>Eat bugs to regain health</string>
+				<string>I wrote the iOS code and designed the artwork</string>
+			</array>
+			<key>Image</key>
+			<string>spiked_icon.png</string>
+		</dict>
+		<dict>
+			<key>ScreenShots</key>
+			<array>
+				<string>waiting_ss_1.png</string>
+				<string>waiting_ss_2.png</string>
+				<string>waiting_ss_3.png</string>
+				<string>waiting_ss_4.png</string>
+				<string>waiting_ss_5.png</string>
+			</array>
+			<key>Title</key>
+			<string>Waiting Rush</string>
+			<key>Details</key>
+			<string>2011</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>Control a waiter carrying a glass on a tray and do not drop the glass</string>
+				<string>Tilt the tray using the accelerometer</string>
+				<string>I wrote the iOS code and designed the artwork</string>
+			</array>
+			<key>Image</key>
+			<string>waiting_icon.png</string>
+		</dict>
+		<dict>
+			<key>ScreenShots</key>
+			<array>
+				<string>gl_ss_1.png</string>
+				<string>gl_ss_2.png</string>
+				<string>gl_ss_3.png</string>
+				<string>gl_ss_4.png</string>
+				<string>gl_ss_5.png</string>
+			</array>
+			<key>Title</key>
+			<string>OpenGL Cube Generator</string>
+			<key>Details</key>
+			<string>2011</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>First OpenGL utility I created</string>
+				<string>Allows a user to display a cube based on the various parameters in the options menu</string>
+			</array>
+			<key>Image</key>
+			<string>gl_icon.png</string>
+		</dict>
+		<dict>
+			<key>ScreenShots</key>
+			<array>
+				<string>esp_ss_1.png</string>
+				<string>esp_ss_2.png</string>
+				<string>esp_ss_3.png</string>
+				<string>esp_ss_4.png</string>
+				<string>esp_ss_5.png</string>
+			</array>
+			<key>Title</key>
+			<string>ESP Tester</string>
+			<key>Details</key>
+			<string>2012</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>First application I created for Interdisciplinary Design Collaborative</string>
+				<string>Tracks your progress</string>
+				<string>Gives intuitive feedback</string>
+				<string>Displays a Quartz2D graph of your progress and the average progress</string>
+			</array>
+			<key>Image</key>
+			<string>esp_icon.png</string>
+		</dict>
+	</array>
+	<key>Professional Background</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Boeing</string>
+			<key>Details</key>
+			<string>May, 2014 - August, 2014</string>
+			<key>Description Header</key>
+			<string>In the summer of 2014, I will be an application developer intern at the Boeing Company. Only a general work description was provided, but I suspect the internship will be a rewarding experience.</string>
+			<key>Image</key>
+			<string>boeing_logo.png</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Garmin</string>
+			<key>Details</key>
+			<string>May, 2013 - August, 2013</string>
+			<key>Description Header</key>
+			<string>In the summer of 2013, I worked as a software engineering intern at Garmin:</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>Developed software in C++ for the aviation department</string>
+				<string>Created modular tests for a design assurance upgrade</string>
+				<string>Attended weekly and quarterly meetings to discuss progress and contributed thoughts and ideas to the social committee</string>
+			</array>
+			<key>Image</key>
+			<string>garmin_logo.png</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Lumate</string>
+			<key>Details</key>
+			<string>September, 2011 - December 2012</string>
+			<key>Description Header</key>
+			<string>When I first started college, I worked for the Interdisciplinary Design Collaborative, LLC (now Lumate)</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>iOS and Mac OSX developer and designer</string>
+				<string>Created multiple applications including Motocross Sniper, Creature Catcher and ESP Tester</string>
+			</array>
+			<key>Image</key>
+			<string>lumate_logo.png</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Off Kilter Studios, LLC</string>
+			<key>Details</key>
+			<string>December, 2012 - Present</string>
+			<key>Description Header</key>
+			<string>In December of 2012, my friend and I founded Off Kilter Studios, LLC</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>We create our own iOS and Android applications as well as applications for individual clients</string>
+				<string>I am the head iOS and Mac OSX developer, while my partner is the head Android developer</string>
+				<string>I have programmed native applications in Objective-C and server applications in PHP/MySQL</string>
+			</array>
+			<key>Image</key>
+			<string>off_kilter_logo.png</string>
+		</dict>
+	</array>
+	<key>Educational Background</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>School</string>
+			<key>Details</key>
+			<string>August, 2011 - December, 2015</string>
+			<key>Description Header</key>
+			<string>Missouri University of Science and Technology</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>B.S. Computer Science</string>
+				<string>Junior</string>
+				<string>4.0 Cumulative GPA</string>
+				<string>Phi Kappa Phi Honor&apos;s Society</string>
+			</array>
+			<key>Image</key>
+			<string>mst_logo.png</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Classes</string>
+			<key>Details</key>
+			<string>in Computer Science</string>
+			<key>Description Header</key>
+			<string>Computer Science Courses:</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>Artificial Intelligence</string>
+				<string>Operating Systems</string>
+				<string>Numerical Methods</string>
+				<string>Theory of Computer Science</string>
+				<string>Software Engineering</string>
+				<string>Programming Languages and Translators</string>
+				<string>Algorithms</string>
+				<string>Discrete Math</string>
+				<string>Data Structures</string>
+			</array>
+			<key>Image</key>
+			<string>classes_logo.png</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Study Abroad</string>
+			<key>Details</key>
+			<string>Hong Kong</string>
+			<key>Description Header</key>
+			<string>During the Fall semester of 2014, I am studying abroad at the Hong Kong University of Science And Technology. I plan to make the most out of this experience as possible. I am very excited to personally witness such a different culture from my own.</string>
+			<key>Image</key>
+			<string>hkust_logo.png</string>
+		</dict>
+	</array>
+	<key>Technical Skills</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Objective-C</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>I started programming in Objective-C as a sophomore in high school (2009)</string>
+				<string>I began by creating very simple iPhone utilities with UIKit and then transitioned into more difficult utilities and finally games with frameworks such as Cocos2D and Box2D</string>
+				<string>Today, I can&apos;t wait to find out what application I&apos;m going to work on next!</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>C++</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>I started programming in C++ during my sophomore year of high school (2009)</string>
+				<string>My most recent project is an artificial intelligence for chess that employs a time-limited iterative-deepening depth-limited minimax algorithm with alpha-beta pruning, a history table and quiescence search</string>
+				<string>I have also used A* graph search with a high-quality heuristic to solve the TJ-Wriggle puzzle</string>
+				<string>For all of my Computer Science assignments and programming competitions at school, I use C++</string>
+				<string>During my internship with Garmin, I programmed in C++ for the aviation department</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Cocos2D</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>I have been using Cocos2D ever since I started making games around senior year of high school (2011)</string>
+				<string>I have become extremely familiar with the game engine and I just finished my latest app, Fan Factory</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Box2D</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>I have used Box2D for as long as I have used Cocos2D</string>
+				<string>I used Box2D for all of my games that needed a physics engine such as Fan Factory and Motocross Sniper</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>C</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>For many low-level applications, I like to use C</string>
+				<string>I have written programs for the 8051 and Arduino Uno microcontrollers</string>
+				<string>For the 8051, I implemented a feature that plays a song when given an array of notes and delays, a feature that sends a string serially via the UART, a whack-a-mole game and a keyboard that sends keys serially with nine buttons (similar to texting on older cellphones)</string>
+				<string>For the Arduino Uno, I created a security alarm that detects when an object is closer that a set proximity with a ultrasonic ping sensor</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Flex/Bison</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>During the spring of 2012 in my Programming Languages and Translators course, I created a programming language translator for a subset of LISP using Flex and Bison</string>
+				<string>It can translate and process most LISP expressions including let*, lambda, arithmetic, relational, logical, if, expression lists, id lists, print and input</string>
+				<string>In the course and past courses, I was the only student to complete the extra credit assignment, which was to store lambda functions in a symbol table, then evaluate function calls with the stored functions</string>
+				<string>The semester after I took the course, I was the teaching assistant and grader</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>PHP/SQL/HTML/Javascript</string>
+			<key>Description Bullets</key>
+			<array>
+				<string>For server and webpage work, I like to use PHP, SQL, HTML and Javascript</string>
+				<string>Two of my friends and I created a social media web page based around music</string>
+				<string>A user could join our website to connect with people that have the same music interests as well as posting his or her own music interests, updating his or her profile and finding new music</string>
+				<string>We used SQL for the database, PHP for manipulating the database and HTML/Javascript for the user interface</string>
+			</array>
+		</dict>
+	</array>
+	<key>Interests</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Road Tripping</string>
+			<key>Description Header</key>
+			<string>When I was younger, my dad would tell me wondrous tales of him and people he knew going on very long road trips. I would also hear about people traveling cross country with very little possessions. When I got my first car, I started taking road trips of my own. So far, my friends and I have traveled to San Diego, Catalina Island, Los Angeles, Las Vegas, Santa Barbara, Santa Monica, San Francisco, Big Sur, Crescent City, the Redwood Forest, Seattle, Salt Lake City, Arches National Park, the Rocky Mountains, Colorado Springs and Myrtle Beach all in my 1986 Honda Accord hatchback. Fortunately, it has only broken down a couple of times. I hope to visit Yosemite National Park in the near future. </string>
+			<key>Image Folder</key>
+			<string>roadtripping</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Backpacking</string>
+			<key>Description Header</key>
+			<string>After going on numerous road trips, I wanted to spend more and more time at each place I visited. Eventually, I got a backpack for backpacking and various supplies. I have hiked in Missouri, Colorado and Utah. I have been to Zion National Park, Buena Vista, Arches National Park and a few small trails in Missouri.</string>
+			<key>Image Folder</key>
+			<string>backpacking</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Health and Fitness</string>
+			<key>Description Header</key>
+			<string>Even before high school, I was interested in health and fitness. Half of my life, I grew up on a farm where there was a need of physical labor. In high school, I found that running was very enjoyable. Out of my four years in high school, I ran cross country for three, ran track for one, wrestled for three and swam for one. Now that I am in college, I workout six days a week and run once a week. I don&apos;t have any recent photos of myself running or working out, so please enjoy these photos of the farm I grew up on.</string>
+			<key>Image Folder</key>
+			<string>healthandfitness</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Photography</string>
+			<key>Description Header</key>
+			<string>Photography has been an interest of mine since I was very young. I would play with a camera any chance I got. I&apos;m not an experienced photographer, but taking photos of my experiences always brings me enjoyment.</string>
+			<key>Image Folder</key>
+			<string>photography</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScreenShotsViewController">
+            <connections>
+                <outlet property="black" destination="Jn8-YD-tu3" id="tet-By-cM1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jn8-YD-tu3">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Jn8-YD-tu3" secondAttribute="bottom" id="DV0-P3-H4z"/>
+                <constraint firstItem="Jn8-YD-tu3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="m2I-Rp-SrL"/>
+                <constraint firstItem="Jn8-YD-tu3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="o0a-8u-MEr"/>
+                <constraint firstAttribute="trailing" secondItem="Jn8-YD-tu3" secondAttribute="trailing" id="rgc-Y4-zIy"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="rIW-mA-Luu" appends="YES" id="72m-lS-KVF"/>
+            </connections>
+        </view>
+        <tapGestureRecognizer id="rIW-mA-Luu">
+            <connections>
+                <action selector="handleTap:" destination="-1" id="9vF-sW-MPY"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>
