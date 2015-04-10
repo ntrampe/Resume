@@ -22,8 +22,12 @@
  */
 
 #import <UIKit/UIKit.h>
+@class DataController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+  DataController * sharedDC;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

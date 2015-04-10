@@ -24,7 +24,7 @@
 #import "ProjectCellData.h"
 
 @implementation ProjectCellData
-@synthesize url = m_url;
+@synthesize url = m_url, scheme = m_scheme;
 @synthesize screenShots = m_shots;
 
 - (id)initWithTitle:(NSString *)aTitle
@@ -33,6 +33,7 @@
  descriptionBullets:(NSArray *)aDescriptionBullets
               image:(NSString *)aImage
                 url:(NSString *)aURL
+             scheme:(NSString *)aScheme
         screenShots:(NSArray *)aScreenShots
 {
   self = [super initWithTitle:aTitle
@@ -43,6 +44,7 @@
   if (self)
   {
     m_url = aURL;
+    m_scheme = aScheme;
     m_shots = [NSArray arrayWithArray:aScreenShots];
   }
   return self;
@@ -55,6 +57,7 @@
   if (self)
   {
     m_url = [aDictionary objectForKey:@"URL"];
+    m_scheme = [aDictionary objectForKey:@"Scheme"];
     m_shots = [NSArray arrayWithArray:[aDictionary objectForKey:@"ScreenShots"]];
   }
   return self;

@@ -24,8 +24,11 @@
 #import <UIKit/UIKit.h>
 #import "ShotViewController.h"
 
+@class DataController;
+
 @interface ScreenShotsViewController : UIViewController <UIPageViewControllerDataSource>
 {
+  DataController * sharedDC;
   NSArray * m_shots;
 }
 @property (strong, nonatomic) UIPageViewController *pageController;

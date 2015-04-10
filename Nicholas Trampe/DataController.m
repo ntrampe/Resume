@@ -29,12 +29,16 @@
 - (void)initController;
 
 - (NSString *)filePath;
+- (NSString *)themePath;
 - (NSString *)documentsPath;
+
+- (UIColor *)colorFromString:(NSString *)aString;
 
 @end
 
 @implementation DataController
 @synthesize data = m_data;
+@synthesize theme = m_theme;
 
 #pragma mark -
 #pragma mark Init
@@ -79,6 +83,12 @@
 }
 
 
+- (NSString *)themePath
+{
+  return [[NSBundle mainBundle] pathForResource:@"theme" ofType:@"plist"];
+}
+
+
 - (NSString *)documentsPath
 {
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -89,6 +99,10 @@
 }
 
 
+#pragma mark -
+#pragma mark Data Getters
+
+
 - (NSString *)name
 {
   return [self.data objectForKey:@"Name"];
@@ -97,26 +111,7 @@
 
 - (NSString *)picture
 {
-  return [NSString stringWithFormat:@"%@%@", SERVER_IMAGE_FOLDER, [self.data objectForKey:@"Picture"]];
-}
-
-
-- (NSArray *)colors
-{
-  NSMutableArray * res = [NSMutableArray array];
-  NSArray * strings = [self.data objectForKey:@"Button Colors"];
-  
-  for (NSString * s in strings)
-  {
-    NSArray * components = [s componentsSeparatedByString:@", "];
-    UIColor * color = [UIColor colorWithRed:[[components objectAtIndex:0] floatValue] / 255.0f
-                                      green:[[components objectAtIndex:1] floatValue] / 255.0f
-                                       blue:[[components objectAtIndex:2] floatValue] / 255.0f
-                                      alpha:1.0f];
-    [res addObject:color];
-  }
-  
-  return res;
+  return [NSString stringWithFormat:@"%@%@", SERVER_IMAGE_DIRECTORY, [self.data objectForKey:@"Picture"]];
 }
 
 
@@ -150,6 +145,16 @@
 }
 
 
+#pragma mark -
+#pragma mark Theme Getters
+
+
+- (void)loadTheme:(NSString *)aThemeName
+{
+  m_theme = [[NTTheme alloc] initWithThemeName:aThemeName];
+}
+
+
 + (BOOL)hasInternetAccess
 {
   struct sockaddr_in zeroAddress;
@@ -166,7 +171,7 @@
 
 + (BOOL)canReachData
 {
-  NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.offkilterstudios.com/resume/data.plist"]];
+  NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:SERVER_DATA_FILE]];
   NSURLResponse* response = nil;
   NSInteger httpStatus = -1;
   
@@ -202,7 +207,7 @@
   }
   
   MKNetworkEngine* engine = [[MKNetworkEngine alloc] initWithHostName:nil];
-  MKNetworkOperation* operation = [engine operationWithURLString:@"http://www.offkilterstudios.com/resume/data.plist"];
+  MKNetworkOperation* operation = [engine operationWithURLString:SERVER_DATA_FILE];
   [operation addDownloadStream:[NSOutputStream outputStreamToFileAtPath:self.documentsPath
                                                           append:YES]];
   
@@ -234,6 +239,8 @@
 {
   NSMutableDictionary * dict = [NSMutableDictionary dictionaryWithContentsOfFile:[self filePath]];
   m_data = [NSMutableDictionary dictionaryWithDictionary:dict];
+  
+  [self loadTheme:@"Default"];
 }
 
 

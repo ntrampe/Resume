@@ -61,7 +61,6 @@
 		01D1E77118F4AD3700BF760E /* DetailSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1E77018F4AD3700BF760E /* DetailSlide.m */; };
 		01D1E77318F4AF3600BF760E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D1E77218F4AF3600BF760E /* QuartzCore.framework */; };
 		01D8686218F3228300C4478B /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8686018F3228300C4478B /* DataController.m */; };
-		01D8686518F3235E00C4478B /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01D8686418F3235E00C4478B /* data.plist */; };
 		E13C78DE1A5ED3CA005F629D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13C78DD1A5ED3CA005F629D /* Launch Screen.xib */; };
 		E15C763A1974B5C500CC249B /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = E15C76271974B5C500CC249B /* NSData+MKBase64.m */; };
 		E15C763B1974B5C500CC249B /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = E15C76291974B5C500CC249B /* NSDate+RFC1123.m */; };
@@ -72,17 +71,13 @@
 		E15C76401974B5C500CC249B /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E15C76331974B5C500CC249B /* MKNetworkEngine.m */; };
 		E15C76411974B5C500CC249B /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E15C76361974B5C500CC249B /* MKNetworkOperation.m */; };
 		E15C76421974B5C500CC249B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E15C76391974B5C500CC249B /* Reachability.m */; };
-		E197A3AC1A6099D7005EF19B /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = E197A3AB1A6099D7005EF19B /* placeholder.png */; };
-		E1B4ED351A5F21FE00D7FCDF /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B4ED341A5F21FE00D7FCDF /* blank.png */; };
-		E1B4ED3A1A5F231300D7FCDF /* drop_box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B4ED361A5F231300D7FCDF /* drop_box@2x.png */; };
-		E1B4ED3B1A5F231300D7FCDF /* bg_texture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B4ED371A5F231300D7FCDF /* bg_texture@2x.png */; };
-		E1B4ED3C1A5F231300D7FCDF /* bg_texture.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B4ED381A5F231300D7FCDF /* bg_texture.png */; };
-		E1B4ED3D1A5F231300D7FCDF /* drop_box.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B4ED391A5F231300D7FCDF /* drop_box.png */; };
 		E1C532771974B08500671885 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C532761974B08500671885 /* CFNetwork.framework */; };
 		E1C532791974B09100671885 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C532781974B09100671885 /* SystemConfiguration.framework */; };
 		E1C5327B1974B0A800671885 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C5327A1974B0A800671885 /* Security.framework */; };
 		E1C5327D1974B0B200671885 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C5327C1974B0B200671885 /* ImageIO.framework */; };
 		E1EA89B31A5C17F800F33C70 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1EA89B21A5C17F800F33C70 /* LICENSE.txt */; };
+		E1F00F391A659FCC00B72DE7 /* NTTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F00F381A659FCC00B72DE7 /* NTTheme.m */; };
+		E1F00F451A65A9F300B72DE7 /* themes in Resources */ = {isa = PBXBuildFile; fileRef = E1F00F441A65A9F300B72DE7 /* themes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,7 +166,6 @@
 		01D1E77818F4BE7F00BF760E /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		01D8685F18F3228300C4478B /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
 		01D8686018F3228300C4478B /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
-		01D8686418F3235E00C4478B /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		E13C78DD1A5ED3CA005F629D /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		E15C76261974B5C500CC249B /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
 		E15C76271974B5C500CC249B /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
@@ -192,17 +186,14 @@
 		E15C76361974B5C500CC249B /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
 		E15C76381974B5C500CC249B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E15C76391974B5C500CC249B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		E197A3AB1A6099D7005EF19B /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
-		E1B4ED341A5F21FE00D7FCDF /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
-		E1B4ED361A5F231300D7FCDF /* drop_box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drop_box@2x.png"; sourceTree = "<group>"; };
-		E1B4ED371A5F231300D7FCDF /* bg_texture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_texture@2x.png"; sourceTree = "<group>"; };
-		E1B4ED381A5F231300D7FCDF /* bg_texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_texture.png; sourceTree = "<group>"; };
-		E1B4ED391A5F231300D7FCDF /* drop_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop_box.png; sourceTree = "<group>"; };
 		E1C532761974B08500671885 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E1C532781974B09100671885 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E1C5327A1974B0A800671885 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E1C5327C1974B0B200671885 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		E1EA89B21A5C17F800F33C70 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		E1F00F371A659FCC00B72DE7 /* NTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTTheme.h; sourceTree = "<group>"; };
+		E1F00F381A659FCC00B72DE7 /* NTTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTTheme.m; sourceTree = "<group>"; };
+		E1F00F441A65A9F300B72DE7 /* themes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = themes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +264,7 @@
 		010C383E18F1CC0E00D8D00B /* Nicholas Trampe */ = {
 			isa = PBXGroup;
 			children = (
+				E1F00F441A65A9F300B72DE7 /* themes */,
 				010C389318F1E01300D8D00B /* Resources */,
 				01D1E73418F4833100BF760E /* iPad */,
 				010C383F18F1CC0E00D8D00B /* Supporting Files */,
@@ -334,7 +326,6 @@
 		010C389318F1E01300D8D00B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				01D8686418F3235E00C4478B /* data.plist */,
 				01D8686618F3439900C4478B /* Images */,
 			);
 			name = Resources;
@@ -442,12 +433,6 @@
 		01D8686618F3439900C4478B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E1B4ED361A5F231300D7FCDF /* drop_box@2x.png */,
-				E1B4ED371A5F231300D7FCDF /* bg_texture@2x.png */,
-				E1B4ED381A5F231300D7FCDF /* bg_texture.png */,
-				E1B4ED391A5F231300D7FCDF /* drop_box.png */,
-				E1B4ED341A5F21FE00D7FCDF /* blank.png */,
-				E197A3AB1A6099D7005EF19B /* placeholder.png */,
 				017FB60E18F5DE4C0000985D /* Images.xcassets */,
 				0182DA6D18F8F56D00C75EE3 /* Icons */,
 				017FB5ED18F5D9130000985D /* Launch */,
@@ -503,6 +488,8 @@
 				E15C76241974B5C500CC249B /* MKNetworkKit */,
 				01D8685F18F3228300C4478B /* DataController.h */,
 				01D8686018F3228300C4478B /* DataController.m */,
+				E1F00F371A659FCC00B72DE7 /* NTTheme.h */,
+				E1F00F381A659FCC00B72DE7 /* NTTheme.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -588,7 +575,6 @@
 			files = (
 				E13C78DE1A5ED3CA005F629D /* Launch Screen.xib in Resources */,
 				E1EA89B31A5C17F800F33C70 /* LICENSE.txt in Resources */,
-				E1B4ED3B1A5F231300D7FCDF /* bg_texture@2x.png in Resources */,
 				0182DA7F18F8F56D00C75EE3 /* Icon-60@2x.png in Resources */,
 				017FB60318F5DA770000985D /* default_ipad_portrait.PNG in Resources */,
 				0182DA8218F8F56D00C75EE3 /* Icon-76.png in Resources */,
@@ -596,25 +582,20 @@
 				0182DA8418F8F56D00C75EE3 /* Icon-Small-50.png in Resources */,
 				0182DA8018F8F56D00C75EE3 /* Icon-72.png in Resources */,
 				0182DA8618F8F56D00C75EE3 /* Icon-Small.png in Resources */,
-				E1B4ED3A1A5F231300D7FCDF /* drop_box@2x.png in Resources */,
 				0182DA7D18F8F56D00C75EE3 /* Icon-40.png in Resources */,
 				0182DA8E18F8F75C00C75EE3 /* Icon.png in Resources */,
-				E197A3AC1A6099D7005EF19B /* placeholder.png in Resources */,
 				0182DA8F18F8F75C00C75EE3 /* Icon@2x.png in Resources */,
 				0182DA8518F8F56D00C75EE3 /* Icon-Small-50@2x.png in Resources */,
 				0182DA8118F8F56D00C75EE3 /* Icon-72@2x.png in Resources */,
 				017FB60618F5DA770000985D /* default@2x.png in Resources */,
 				017FB60F18F5DE4C0000985D /* Images.xcassets in Resources */,
-				E1B4ED351A5F21FE00D7FCDF /* blank.png in Resources */,
 				017FB60D18F5DE170000985D /* default_ipad_landscape@2x.PNG in Resources */,
-				E1B4ED3C1A5F231300D7FCDF /* bg_texture.png in Resources */,
 				0182DA7E18F8F56D00C75EE3 /* Icon-40@2x.png in Resources */,
-				E1B4ED3D1A5F231300D7FCDF /* drop_box.png in Resources */,
 				0182DA8718F8F56D00C75EE3 /* Icon-Small@2x.png in Resources */,
 				017FB43918F5C12B0000985D /* ShotViewController.xib in Resources */,
+				E1F00F451A65A9F300B72DE7 /* themes in Resources */,
 				0182DA8B18F8F56D00C75EE3 /* iTunesArtwork@2x in Resources */,
 				017FB60218F5DA770000985D /* default_568.PNG in Resources */,
-				01D8686518F3235E00C4478B /* data.plist in Resources */,
 				0182DA8318F8F56D00C75EE3 /* Icon-76@2x.png in Resources */,
 				010C384C18F1CC0E00D8D00B /* Main_iPhone.storyboard in Resources */,
 				017FB60C18F5DE170000985D /* default_ipad_landscape.PNG in Resources */,
@@ -641,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				010C38B018F1F2B300D8D00B /* ProfessionalViewController.m in Sources */,
+				E1F00F391A659FCC00B72DE7 /* NTTheme.m in Sources */,
 				E15C763C1974B5C500CC249B /* NSDictionary+RequestEncoding.m in Sources */,
 				01D1E77118F4AD3700BF760E /* DetailSlide.m in Sources */,
 				010C385218F1CC0E00D8D00B /* ViewController.m in Sources */,

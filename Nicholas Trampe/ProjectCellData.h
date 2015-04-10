@@ -26,9 +26,10 @@
 @interface ProjectCellData : MenuCellData
 {
   NSString * m_url;
+  NSString * m_scheme;
   NSArray * m_shots;
 }
-@property (strong, nonatomic) NSString * url;
+@property (strong, nonatomic) NSString * url, * scheme;
 @property (strong, nonatomic) NSArray * screenShots;
 
 - (id)initWithTitle:(NSString *)aTitle
@@ -37,6 +38,7 @@
  descriptionBullets:(NSArray *)aDescriptionBullets
               image:(NSString *)aImage
                 url:(NSString *)aURL
+             scheme:(NSString *)aScheme
         screenShots:(NSArray *)aScreenShots;
 
 @end

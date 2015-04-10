@@ -22,6 +22,7 @@
  */
 
 #import "ScreenShotsViewController.h"
+#import "DataController.h"
 #import "ShotViewController.h"
 
 @interface ScreenShotsViewController ()
@@ -35,6 +36,8 @@
   self = [super initWithNibName:@"ScreenShotsViewController" bundle:[NSBundle mainBundle]];
   if (self)
   {
+    sharedDC = [DataController sharedDataController];
+    
     m_shots = [NSArray arrayWithArray:aScreenShots];
   }
   return self;
@@ -45,7 +48,7 @@
   [super viewDidLoad];
   
   self.title = @"Screenshots";
-  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_texture.png"]];
+  self.view.backgroundColor = sharedDC.theme.backgroundColor;
   
   if (m_shots.count > 0)
   {
@@ -64,7 +67,6 @@
   }
   
   self.black.alpha = 0.0f;
-  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_texture.png"]];
 }
 
 

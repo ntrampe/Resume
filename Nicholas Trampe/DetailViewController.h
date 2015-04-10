@@ -25,8 +25,11 @@
 #import "MenuCellData.h"
 #import "DetailSlideShowView.h"
 
+@class DataController;
+
 @interface DetailViewController : UIViewController
 {
+  DataController * sharedDC;
   MenuCellData * m_data;
   UIImageView * m_textBG;
   BOOL m_firstView;

@@ -22,7 +22,7 @@
  */
 
 #import <QuartzCore/QuartzCore.h>
-
+#import "DataController.h"
 #import "DetailViewController.h"
 #import "config.h"
 
@@ -37,17 +37,20 @@
 {
   [super viewDidLoad];
   
-  self.textView.editable = NO;
-  self.textView.selectable = NO;
-  self.textView.backgroundColor = [UIColor clearColor];
+  sharedDC = [DataController sharedDataController];
   
-  m_textBG = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"drop_box.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)]];
+  self.textView.editable = NO;
+  self.textView.selectable = YES;
+  self.textView.backgroundColor = [UIColor clearColor];
+  self.textView.textColor = sharedDC.theme.textColor;
+  
+  m_textBG = [[UIImageView alloc] initWithImage:[sharedDC.theme containerBox]];
   [self.view addSubview:m_textBG];
   [self.view sendSubviewToBack:m_textBG];
   
   self.automaticallyAdjustsScrollViewInsets = NO;
   
-  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_texture.png"]];
+  self.view.backgroundColor = sharedDC.theme.backgroundColor;
   
   m_firstView = YES;
 }
@@ -106,7 +109,7 @@
     }
     else
     {
-      UIImageView * lBg = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"drop_box.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)]];
+      UIImageView * lBg = [[UIImageView alloc] initWithImage:[sharedDC.theme containerBox]];
       lBg.frame = CGRectMake(20, self.show.frame.origin.y, self.view.frame.size.width - 20 - 20, self.show.frame.size.height - 20);
       [self.view addSubview:lBg];
       
@@ -114,6 +117,7 @@
       [l setNumberOfLines:4];
       [l setText:m_data.title];
       [l setTextAlignment:NSTextAlignmentCenter];
+      [l setTextColor:sharedDC.theme.textColor];
       [l setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE : PHONE_FONT_SIZE)*2]];
       [lBg addSubview:l];
     }

@@ -23,24 +23,30 @@
 
 #import <Foundation/Foundation.h>
 #import "MKNetworkKit/MKNetworkKit.h"
+#import "NTTheme.h"
 
 @interface DataController : NSObject
 {
   NSDictionary * m_data;
+  NTTheme * m_theme;
 }
 @property (strong, nonatomic) MKNetworkEngine *networkEngine;
 @property (strong) NSDictionary * data;
+@property (strong) NTTheme * theme;
 @property (strong) UIColor * color;
 
 //convienience
+//data
 - (NSString *)name;
 - (NSString *)picture;
-- (NSArray *)colors;
 - (NSArray *)projects;
 - (NSArray *)educationalBackgrounds;
 - (NSArray *)professionalBackgrounds;
 - (NSArray *)technicalSkills;
 - (NSArray *)interests;
+
+//theme
+- (void)loadTheme:(NSString *)aThemeName;
 
 + (BOOL)hasInternetAccess;
 + (BOOL)canReachData;

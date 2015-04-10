@@ -40,12 +40,9 @@
   
   sharedDC = [DataController sharedDataController];
   
-  [sharedDC downloadData];
-  
-  self.title = sharedDC.name;
-  [self setNavigationBarTitleColor:[UIColor blackColor]];
-  self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:228/255.0   green:208/255.0   blue:181/255.0 alpha:0.5];
-  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_texture.png"]];
+  [self setNavigationBarTitleColor:sharedDC.theme.textColor];
+  self.navigationController.navigationBar.barTintColor = sharedDC.theme.navigationBarColor;
+  self.view.backgroundColor = sharedDC.theme.backgroundColor;
   
   int count = 0;
   
@@ -56,7 +53,7 @@
       [[(UIButton *)child titleLabel] setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE + 6 : PHONE_FONT_SIZE + 4)]];
       [[(UIButton *)child layer] setBorderWidth:(IS_PAD ? 5 : 3)];
       [[(UIButton *)child layer] setBorderColor:[[UIColor whiteColor] CGColor]];
-      [(UIButton *)child setBackgroundColor:sharedDC.colors[count]];
+      [(UIButton *)child setBackgroundColor:sharedDC.theme.buttonColors[count]];
       [(UIButton *)child setTag:count];
       [(UIButton *)child setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
       count++;
@@ -100,12 +97,12 @@
   if ([sender isKindOfClass:[UIButton class]])
   {
     NSInteger tag = [(UIButton *)sender tag];
-    if (tag >= 0 && tag < sharedDC.colors.count)
+    if (tag >= 0 && tag < sharedDC.theme.buttonColors.count)
     {
       //const CGFloat* rgb = CGColorGetComponents([[m_colors objectAtIndex:tag] CGColor]);
       //self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:rgb[0] green:rgb[1] blue:rgb[2] alpha:0.5];
       
-      sharedDC.color = [sharedDC.colors objectAtIndex:tag];
+      sharedDC.color = [sharedDC.theme.buttonColors objectAtIndex:tag];
     }
   }
 }
@@ -173,6 +170,7 @@
 - (void)downloadDataHandler
 {
   [self.slide setImageURLString:sharedDC.picture];
+  self.title = sharedDC.name;
 }
 
 

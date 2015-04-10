@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Navigation Bar Color</key>
+	<string>228, 208, 181</string>
+	<key>Button Colors</key>
+	<array>
+		<string>94, 111, 66</string>
+		<string>228, 208, 181</string>
+		<string>46, 66, 64</string>
+		<string>136, 154, 156</string>
+		<string>163, 163, 103</string>
+	</array>
+</dict>
+</plist>

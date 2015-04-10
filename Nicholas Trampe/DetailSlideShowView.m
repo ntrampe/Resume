@@ -76,7 +76,6 @@
   for (int i = 0; i < nSlides; i++)
   {
     DetailSlide * s = [[DetailSlide alloc] initWithFrame:CGRectMake((m_images.count == 1 ? (self.frame.size.width - m_size) / 2.0f : 0) + m_size*i, 0, m_size, m_size)];
-    NSLog(@"%@", [m_images objectAtIndex:i]);
     [s setImageURLString:[m_images objectAtIndex:i]];
     s.index = i;
     [self addSubview:s];

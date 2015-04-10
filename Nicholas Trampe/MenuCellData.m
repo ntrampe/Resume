@@ -46,7 +46,7 @@
     
     for (NSString * s in aImageNames)
     {
-      [images addObject:[NSString stringWithFormat:@"%@%@", SERVER_IMAGE_FOLDER, s]];
+      [images addObject:[NSString stringWithFormat:@"%@%@", SERVER_IMAGE_DIRECTORY, s]];
     }
     
     m_imageNames = [NSArray arrayWithArray:images];
@@ -98,7 +98,7 @@
   
   for (NSString * img in contents)
   {
-    [ary addObject:[NSString stringWithFormat:@"%@/%@/%@", SERVER_IMAGE_FOLDER, aFolder, img]];
+    [ary addObject:[NSString stringWithFormat:@"%@/%@/%@", SERVER_IMAGE_DIRECTORY, aFolder, img]];
   }
   
   m_imageNames = [NSArray arrayWithArray:ary];

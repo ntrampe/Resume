@@ -24,7 +24,9 @@
 #import "DetailViewController.h"
 #import "ProjectCellData.h"
 
-@interface ProjectDetailViewController : DetailViewController
+@class DataController;
+
+@interface ProjectDetailViewController : DetailViewController <UIActionSheetDelegate>
 {
   
 }

@@ -48,7 +48,7 @@
   // Do any additional setup after loading the view from its nib.
   
 //  [self.image setImage:[UIImage imageNamed:m_imageName]];
-  [self.image setImageFromURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVER_IMAGE_FOLDER, m_imageName]] placeHolderImage:nil animation:YES];
+  [self.image setImageFromURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVER_IMAGE_DIRECTORY, m_imageName]] placeHolderImage:nil animation:YES];
 }
 
 

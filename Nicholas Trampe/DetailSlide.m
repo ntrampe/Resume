@@ -24,6 +24,7 @@
 //#import <QuartzCore/QuartzCore.h>
 
 #import "DetailSlide.h"
+#import "DataController.h"
 #import "MKNetworkKit/MKNetworkKit.h"
 
 @interface DetailSlide (Private)
@@ -67,7 +68,7 @@
 
 - (void)setImageURLString:(NSString *)aURLString
 {
-  [m_image setImageFromURL:[NSURL URLWithString:aURLString] placeHolderImage:[UIImage imageNamed:@"placeholder.png"] animation:YES];
+  [m_image setImageFromURL:[NSURL URLWithString:aURLString] placeHolderImage:[[[DataController sharedDataController] theme] placeholder] animation:YES];
 }
 
 
@@ -104,7 +105,7 @@
   
   if (m_bg == nil)
   {
-    m_bg = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"drop_box@2x"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)]];
+    m_bg = [[UIImageView alloc] initWithImage:[[[DataController sharedDataController] theme] containerBox]];
     [self addSubview:m_bg];
     [self sendSubviewToBack:m_bg];
   }

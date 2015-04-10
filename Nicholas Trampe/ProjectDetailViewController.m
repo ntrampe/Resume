@@ -23,9 +23,13 @@
 
 #import "ProjectDetailViewController.h"
 #import "ScreenShotsViewController.h"
+#import "DataController.h"
 #import "config.h"
 
 @interface ProjectDetailViewController ()
+
+- (NSURL *)appScheme;
+- (BOOL)isAppInstalled;
 
 @end
 
@@ -34,13 +38,12 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  // Do any additional setup after loading the view.
   
-  [self.headerView setImage:[[UIImage imageNamed:@"drop_box.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)]];
+  [self.headerView setImage:sharedDC.theme.containerBox];
   
   if (m_data.image != nil)
   {
-    [self.imageView setImageFromURL:[NSURL URLWithString:m_data.image] placeHolderImage:[UIImage imageNamed:@"blank.png"] animation:YES];
+    [self.imageView setImageFromURL:[NSURL URLWithString:m_data.image] placeHolderImage:sharedDC.theme.placeholder animation:YES];
   }
 }
 
@@ -61,23 +64,37 @@
 {
   [super updateUI];
   
-  if ([(ProjectCellData *)m_data url] == nil)
+  if (self.isAppInstalled)
   {
-    if ([[(ProjectCellData *)m_data screenShots] count] > 0)
-    {
-      [self.urlButton setTitle:@"Screenshots" forState:UIControlStateNormal];
-    }
-    else
-    {
-      [self.urlButton setTitle:@"" forState:UIControlStateNormal];
-    }
+    [self.urlButton setTitle:@"Open" forState:UIControlStateNormal];
+  }
+  else if ([(ProjectCellData *)m_data url] != nil)
+  {
+    [self.urlButton setTitle:@"View In App Store" forState:UIControlStateNormal];
+  }
+  else if ([[(ProjectCellData *)m_data screenShots] count] > 0)
+  {
+    [self.urlButton setTitle:@"Screenshots" forState:UIControlStateNormal];
+  }
+  else
+  {
+    [self.urlButton setTitle:@"" forState:UIControlStateNormal];
   }
 }
 
 
 - (IBAction)urlPressed:(id)sender
 {
-  if ([(ProjectCellData *)m_data url] != nil)
+  if (self.isAppInstalled && [(ProjectCellData *)m_data url] != nil)
+  {
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:@"Open" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Open App", @"View In App Store", nil];
+    [sheet showInView:self.view];
+  }
+  else if (self.isAppInstalled)
+  {
+    [[UIApplication sharedApplication] openURL:self.appScheme];
+  }
+  else if ([(ProjectCellData *)m_data url] != nil)
   {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[(ProjectCellData *)m_data url]]];
   }
@@ -86,6 +103,38 @@
     ScreenShotsViewController * v = [[ScreenShotsViewController alloc] initWithScreenShots:[(ProjectCellData *)m_data screenShots]];
     [self.navigationController pushViewController:v animated:YES];
   }
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  switch (buttonIndex)
+  {
+    case 0:
+      [[UIApplication sharedApplication] openURL:self.appScheme];
+      break;
+      
+    case 1:
+      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[(ProjectCellData *)m_data url]]];
+      break;
+      
+    default:
+      break;
+  }
+}
+
+
+- (NSURL *)appScheme
+{  
+  NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@://", [(ProjectCellData *)m_data scheme]]];
+  
+  return url;
+}
+
+
+- (BOOL)isAppInstalled
+{
+  return [[UIApplication sharedApplication] canOpenURL:self.appScheme];
 }
 
 

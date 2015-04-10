@@ -37,14 +37,14 @@
 {
   [super viewDidLoad];
   
+  sharedDC = [DataController sharedDataController];
+  
   m_data = [NSMutableArray array];
   
   m_details = nil;
   
   self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_texture.png"]];
-  
-  sharedDC = [DataController sharedDataController];
+  self.view.backgroundColor = sharedDC.theme.backgroundColor;
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadDataHandler) name:DATA_DOWNLOADED_NOTIFICATION object:nil];
   
@@ -138,26 +138,30 @@
   
   MenuCellData * data = [m_data objectAtIndex:indexPath.row];
   
+  cell.backgroundColor = [UIColor clearColor];
+  
+  if (indexPath.row % 2 == 0)
+  {
+    cell.backgroundColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.15f];
+  }
+  
   cell.textLabel.numberOfLines = 4;
   cell.textLabel.text = data.title;
+  cell.textLabel.backgroundColor = [UIColor clearColor];
+  cell.textLabel.textColor = sharedDC.theme.textColor;
   cell.detailTextLabel.numberOfLines = 2;
   cell.detailTextLabel.text = data.details;
-  
-  cell.backgroundColor = [UIColor clearColor];
+  cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+  cell.detailTextLabel.textColor = sharedDC.theme.textColor;
   
   [cell.textLabel setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE : PHONE_FONT_SIZE)]];
   [cell.detailTextLabel setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE - 8 : PHONE_FONT_SIZE - 4)]];
-  [cell.detailTextLabel setTextColor:[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.6f]];
-  
-  if (indexPath.row % 2 == 0)
-  { 
-    cell.backgroundColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.15f];
-  }
   
   if (data.image != nil)
   {
 //    cell.imageView.image = [UIImage imageNamed:data.image];
-    [cell.imageView setImageFromURL:[NSURL URLWithString:data.image] placeHolderImage:[UIImage imageNamed:@"placeholder.png"] animation:YES];
+    
+    [cell.imageView setImageFromURL:[NSURL URLWithString:data.image] placeHolderImage:sharedDC.theme.placeholder animation:YES];
   }
   else
   {
