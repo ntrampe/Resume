@@ -39,6 +39,7 @@
 //data
 - (NSString *)name;
 - (NSString *)picture;
+- (NSString *)information;
 - (NSArray *)projects;
 - (NSArray *)educationalBackgrounds;
 - (NSArray *)professionalBackgrounds;

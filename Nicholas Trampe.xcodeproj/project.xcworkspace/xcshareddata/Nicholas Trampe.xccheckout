@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E12B65B2-B2B7-47F5-B73D-A1DE9D846386</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Nicholas Trampe</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>7BBEACE6B56ED8403C628AB7F574B56450BCDB48</key>
 		<string>https://github.com/ntrampe/Resume.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Nicholas Trampe.xcodeproj/project.xcworkspace</string>
+	<string>Nicholas Trampe.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>7BBEACE6B56ED8403C628AB7F574B56450BCDB48</key>

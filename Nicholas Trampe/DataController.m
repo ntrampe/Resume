@@ -111,7 +111,13 @@
 
 - (NSString *)picture
 {
-  return [NSString stringWithFormat:@"%@%@", SERVER_IMAGE_DIRECTORY, [self.data objectForKey:@"Picture"]];
+  return [SERVER_IMAGE_DIRECTORY stringByAppendingString:[self.data objectForKey:@"Picture"]];
+}
+
+
+- (NSString *)information
+{
+  return [SERVER_ROOT_DIRECTORY stringByAppendingString:[self.data objectForKey:@"Information"]];
 }
 
 

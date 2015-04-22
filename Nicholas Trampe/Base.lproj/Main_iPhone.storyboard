@@ -4,8 +4,51 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Personal Statement View Controller-->
+        <scene sceneID="bTs-Jc-RjS">
+            <objects>
+                <viewController id="M4s-Wx-Oy7" customClass="PersonalStatementViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MZB-bd-pjQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="oZm-PM-L9g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nc5-jc-Xow">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XNA-CK-ItO">
+                                <rect key="frame" x="10" y="28" width="300" height="444"/>
+                            </imageView>
+                            <webView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rik-sp-YM9">
+                                <rect key="frame" x="21" y="40" width="278" height="420"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="XNA-CK-ItO" secondAttribute="trailing" constant="-6" id="IBw-CQ-HCU"/>
+                            <constraint firstItem="rik-sp-YM9" firstAttribute="top" secondItem="MZB-bd-pjQ" secondAttribute="bottom" constant="20" id="NrK-u5-KH8"/>
+                            <constraint firstItem="XNA-CK-ItO" firstAttribute="leading" secondItem="Nc5-jc-Xow" secondAttribute="leadingMargin" constant="-6" id="ON8-7h-KEa"/>
+                            <constraint firstItem="rik-sp-YM9" firstAttribute="leading" secondItem="Nc5-jc-Xow" secondAttribute="leadingMargin" constant="5" id="f7I-4L-CLK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rik-sp-YM9" secondAttribute="trailing" constant="5" id="ihP-a3-ARt"/>
+                            <constraint firstItem="oZm-PM-L9g" firstAttribute="top" secondItem="rik-sp-YM9" secondAttribute="bottom" constant="20" id="j9V-J9-eQw"/>
+                            <constraint firstItem="oZm-PM-L9g" firstAttribute="top" secondItem="XNA-CK-ItO" secondAttribute="bottom" constant="8" id="nLK-Ue-jEw"/>
+                            <constraint firstItem="XNA-CK-ItO" firstAttribute="top" secondItem="MZB-bd-pjQ" secondAttribute="bottom" constant="8" id="sZ3-Ny-V2X"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2pe-rZ-OUD"/>
+                    <connections>
+                        <outlet property="imageViewBG" destination="XNA-CK-ItO" id="jlw-la-gAf"/>
+                        <outlet property="webViewStatement" destination="rik-sp-YM9" id="NQI-QA-D5U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O7x-LR-vhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="550" y="19"/>
+        </scene>
         <!--First Last-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -100,6 +143,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="X9U-kg-m7V" secondAttribute="height" multiplier="1:1" id="rzA-fK-uCQ"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="m7R-rd-61N" appends="YES" id="mkG-Gj-x6W"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -130,6 +176,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="m7R-rd-61N">
+                    <connections>
+                        <segue destination="M4s-Wx-Oy7" kind="push" id="k3t-gU-8Y6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="550" y="616"/>
         </scene>

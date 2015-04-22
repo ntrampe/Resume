@@ -61,6 +61,7 @@
 		01D1E77118F4AD3700BF760E /* DetailSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D1E77018F4AD3700BF760E /* DetailSlide.m */; };
 		01D1E77318F4AF3600BF760E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D1E77218F4AF3600BF760E /* QuartzCore.framework */; };
 		01D8686218F3228300C4478B /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8686018F3228300C4478B /* DataController.m */; };
+		E11974041AD85BF6008B03D1 /* PersonalStatementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11974031AD85BF6008B03D1 /* PersonalStatementViewController.m */; };
 		E13C78DE1A5ED3CA005F629D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13C78DD1A5ED3CA005F629D /* Launch Screen.xib */; };
 		E15C763A1974B5C500CC249B /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = E15C76271974B5C500CC249B /* NSData+MKBase64.m */; };
 		E15C763B1974B5C500CC249B /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = E15C76291974B5C500CC249B /* NSDate+RFC1123.m */; };
@@ -166,6 +167,8 @@
 		01D1E77818F4BE7F00BF760E /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		01D8685F18F3228300C4478B /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
 		01D8686018F3228300C4478B /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
+		E11974021AD85BF6008B03D1 /* PersonalStatementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalStatementViewController.h; sourceTree = "<group>"; };
+		E11974031AD85BF6008B03D1 /* PersonalStatementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalStatementViewController.m; sourceTree = "<group>"; };
 		E13C78DD1A5ED3CA005F629D /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		E15C76261974B5C500CC249B /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
 		E15C76271974B5C500CC249B /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 				010C388E18F1D6D300D8D00B /* DetailViewController.m */,
 				010C38C918F1FDE900D8D00B /* DetailSlideShowView.h */,
 				010C38CA18F1FDE900D8D00B /* DetailSlideShowView.m */,
+				E11974021AD85BF6008B03D1 /* PersonalStatementViewController.h */,
+				E11974031AD85BF6008B03D1 /* PersonalStatementViewController.m */,
 				01D1E76F18F4AD3700BF760E /* DetailSlide.h */,
 				01D1E77018F4AD3700BF760E /* DetailSlide.m */,
 				010C38C518F1FB0400D8D00B /* Interests */,
@@ -628,6 +633,7 @@
 				010C385218F1CC0E00D8D00B /* ViewController.m in Sources */,
 				E15C763B1974B5C500CC249B /* NSDate+RFC1123.m in Sources */,
 				010C388018F1D0FE00D8D00B /* MenuCellData.m in Sources */,
+				E11974041AD85BF6008B03D1 /* PersonalStatementViewController.m in Sources */,
 				010C38CB18F1FDE900D8D00B /* DetailSlideShowView.m in Sources */,
 				010C384918F1CC0E00D8D00B /* AppDelegate.m in Sources */,
 				010C388F18F1D6D300D8D00B /* DetailViewController.m in Sources */,
