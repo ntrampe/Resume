@@ -28,7 +28,7 @@
 
 @interface ProjectDetailViewController : DetailViewController <UIActionSheetDelegate>
 {
-  int data;
+  
 }
 @property (weak) IBOutlet UIImageView * imageView, * headerView;
 @property (weak) IBOutlet UIButton * urlButton;

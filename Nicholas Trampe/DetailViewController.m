@@ -39,10 +39,10 @@
   
   sharedDC = [DataController sharedDataController];
   
-  self.textView.editable = NO;
-  self.textView.selectable = YES;
-  self.textView.backgroundColor = [UIColor clearColor];
-  self.textView.textColor = sharedDC.theme.textColor;
+//  self.textView.editable = NO;
+//  self.textView.selectable = YES;
+//  self.textView.backgroundColor = [UIColor clearColor];
+//  self.textView.textColor = sharedDC.theme.textColor;
   
   m_textBG = [[UIImageView alloc] initWithImage:[sharedDC.theme containerBox]];
   [self.view addSubview:m_textBG];
@@ -122,7 +122,7 @@
       [lBg addSubview:l];
     }
     
-    m_textBG.frame = CGRectMake(self.textView.frame.origin.x - 10, self.textView.frame.origin.y - 10, self.textView.frame.size.width + 20, self.textView.frame.size.height + 20);
+    m_textBG.frame = CGRectMake(self.webView.frame.origin.x - 10, self.webView.frame.origin.y - 10, self.webView.frame.size.width + 20, self.webView.frame.size.height + 20);
     
     for (UIView * child in self.view.subviews)
     {
@@ -178,25 +178,7 @@
   if (m_data.title != nil)
     self.title = m_data.title;
   
-  NSString * result = @"";
-  
-  for (int i = 0; i < m_data.bullets.count; i++)
-  {
-    result = [result stringByAppendingString:[NSString stringWithFormat:@"\u2022 %@%@",
-                                              [m_data.bullets objectAtIndex:i],
-                                              (i == m_data.bullets.count-1 ? @"" : @"\n\n")]];
-  }
-  
-  [self.textView setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE : PHONE_FONT_SIZE)]];
-  
-  if (m_data.header != nil)
-  {
-    self.textView.text = [NSString stringWithFormat:@"%@%@%@", m_data.header, (m_data.bullets.count != 0 ? @"\n\n" : @""), result];
-  }
-  else
-  {
-    self.textView.text = result;
-  }
+  [self.webView loadHTMLWithData:m_data];
 }
 
 

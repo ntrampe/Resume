@@ -419,7 +419,7 @@
         <!--Detail View Controller-->
         <scene sceneID="zQP-Y7-zPD">
             <objects>
-                <viewController id="AxF-ut-Kyu" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AxF-ut-Kyu" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hdF-HX-AMZ"/>
                         <viewControllerLayoutGuide type="bottom" id="fsP-kB-h7F"/>
@@ -428,14 +428,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QL5-IW-wcE">
-                                <rect key="frame" x="20" y="273" width="280" height="187"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3m-Dt-Md9" customClass="DetailSlideShowView">
                                 <rect key="frame" x="0.0" y="60" width="320" height="205"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -443,23 +435,27 @@
                                     <constraint firstAttribute="width" secondItem="M3m-Dt-Md9" secondAttribute="height" multiplier="64:41" id="W1P-hK-kRO"/>
                                 </constraints>
                             </view>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vj3-BR-gWs" customClass="DetailWebView">
+                                <rect key="frame" x="20" y="273" width="280" height="187"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QL5-IW-wcE" firstAttribute="leading" secondItem="GTB-jf-V6o" secondAttribute="leading" constant="20" id="ENU-7p-02r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vj3-BR-gWs" secondAttribute="trailing" constant="4" id="Gaq-bL-9QP"/>
+                            <constraint firstItem="fsP-kB-h7F" firstAttribute="top" secondItem="vj3-BR-gWs" secondAttribute="bottom" constant="20" id="Hns-l5-uj6"/>
                             <constraint firstAttribute="trailing" secondItem="M3m-Dt-Md9" secondAttribute="trailing" id="Oa7-9v-1MI"/>
                             <constraint firstItem="M3m-Dt-Md9" firstAttribute="top" secondItem="hdF-HX-AMZ" secondAttribute="bottom" constant="16" id="TQB-w7-ye3"/>
                             <constraint firstItem="M3m-Dt-Md9" firstAttribute="leading" secondItem="GTB-jf-V6o" secondAttribute="leading" id="fHG-wc-Yu8"/>
-                            <constraint firstItem="fsP-kB-h7F" firstAttribute="top" secondItem="QL5-IW-wcE" secondAttribute="bottom" constant="20" id="i2X-Wd-94K"/>
-                            <constraint firstAttribute="trailing" secondItem="QL5-IW-wcE" secondAttribute="trailing" constant="20" id="kLf-dw-flU"/>
-                            <constraint firstItem="QL5-IW-wcE" firstAttribute="top" secondItem="M3m-Dt-Md9" secondAttribute="bottom" constant="8" id="nhl-ev-ycw"/>
-                            <constraint firstItem="QL5-IW-wcE" firstAttribute="top" secondItem="M3m-Dt-Md9" secondAttribute="bottom" constant="8" id="viP-63-ANn"/>
+                            <constraint firstItem="vj3-BR-gWs" firstAttribute="top" secondItem="M3m-Dt-Md9" secondAttribute="bottom" constant="8" id="rVM-k6-YOX"/>
+                            <constraint firstItem="vj3-BR-gWs" firstAttribute="leading" secondItem="GTB-jf-V6o" secondAttribute="leadingMargin" constant="4" id="s7f-aJ-05Z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wfg-ae-Rjt"/>
                     <connections>
                         <outlet property="show" destination="M3m-Dt-Md9" id="d5y-eY-c18"/>
-                        <outlet property="textView" destination="QL5-IW-wcE" id="fqT-Q9-q4m"/>
+                        <outlet property="webView" destination="vj3-BR-gWs" id="LV7-uH-czk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnI-4B-SaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -469,7 +465,7 @@
         <!--Project Detail View Controller-->
         <scene sceneID="Tpp-Ze-Q3j">
             <objects>
-                <viewController id="DHe-jF-IaN" customClass="ProjectDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProjectDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DHe-jF-IaN" customClass="ProjectDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ot0-HF-Y8V"/>
                         <viewControllerLayoutGuide type="bottom" id="h0I-0T-NaR"/>
@@ -492,14 +488,6 @@
                                     <constraint firstAttribute="width" constant="72" id="gXb-Bw-5IP"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKV-Cv-tbU">
-                                <rect key="frame" x="20" y="235" width="280" height="225"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRc-CI-FlU">
                                 <rect key="frame" x="45" y="164" width="230" height="39"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -509,25 +497,29 @@
                                     <action selector="urlPressed:" destination="DHe-jF-IaN" eventType="touchUpInside" id="LT6-K1-Koz"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zp-pB-TyR" customClass="DetailWebView">
+                                <rect key="frame" x="20" y="235" width="280" height="225"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="h0I-0T-NaR" firstAttribute="top" secondItem="9zp-pB-TyR" secondAttribute="bottom" constant="20" id="9Ij-uF-4ni"/>
                             <constraint firstAttribute="centerX" secondItem="p2z-VU-dET" secondAttribute="centerX" id="Aoe-1k-csR"/>
                             <constraint firstAttribute="centerX" secondItem="Oc7-2J-Jau" secondAttribute="centerX" id="OZg-y6-y6c"/>
-                            <constraint firstItem="JKV-Cv-tbU" firstAttribute="top" secondItem="p2z-VU-dET" secondAttribute="bottom" constant="20" id="Sot-kk-COj"/>
+                            <constraint firstItem="9zp-pB-TyR" firstAttribute="leading" secondItem="Go6-Pp-qS5" secondAttribute="leadingMargin" constant="4" id="P0k-tb-jvu"/>
+                            <constraint firstItem="9zp-pB-TyR" firstAttribute="top" secondItem="p2z-VU-dET" secondAttribute="bottom" constant="20" id="RIq-e3-hd8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9zp-pB-TyR" secondAttribute="trailing" constant="4" id="c4p-VD-xeq"/>
                             <constraint firstItem="Oc7-2J-Jau" firstAttribute="top" secondItem="ot0-HF-Y8V" secondAttribute="bottom" constant="40" id="eSO-QZ-dMS"/>
-                            <constraint firstAttribute="trailing" secondItem="JKV-Cv-tbU" secondAttribute="trailing" constant="20" id="ghK-LT-bSr"/>
                             <constraint firstAttribute="centerX" secondItem="kRc-CI-FlU" secondAttribute="centerX" id="jJp-hA-I98"/>
-                            <constraint firstItem="JKV-Cv-tbU" firstAttribute="leading" secondItem="Go6-Pp-qS5" secondAttribute="leading" constant="20" id="oty-Z0-CI4"/>
-                            <constraint firstItem="h0I-0T-NaR" firstAttribute="top" secondItem="JKV-Cv-tbU" secondAttribute="bottom" constant="20" id="vvL-Ha-T2x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9LV-Q0-q8D"/>
                     <connections>
                         <outlet property="headerView" destination="p2z-VU-dET" id="rB1-fW-7x6"/>
                         <outlet property="imageView" destination="Oc7-2J-Jau" id="Wu5-7L-9zY"/>
-                        <outlet property="textView" destination="JKV-Cv-tbU" id="kfF-Tt-0Gf"/>
                         <outlet property="urlButton" destination="kRc-CI-FlU" id="2us-FQ-u77"/>
+                        <outlet property="webView" destination="9zp-pB-TyR" id="Xrm-96-yiw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGR-tF-pCk" userLabel="First Responder" sceneMemberID="firstResponder"/>

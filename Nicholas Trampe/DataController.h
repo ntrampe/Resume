@@ -24,6 +24,7 @@
 #import <Foundation/Foundation.h>
 #import "MKNetworkKit/MKNetworkKit.h"
 #import "NTTheme.h"
+#import "MenuCellData.h"
 
 @interface DataController : NSObject
 {
@@ -45,6 +46,8 @@
 - (NSArray *)professionalBackgrounds;
 - (NSArray *)technicalSkills;
 - (NSArray *)interests;
+
+- (NSDictionary *)dataForTitle:(NSString *)aTitle;
 
 //theme
 - (void)loadTheme:(NSString *)aThemeName;
