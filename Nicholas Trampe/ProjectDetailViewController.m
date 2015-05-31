@@ -28,8 +28,9 @@
 
 @interface ProjectDetailViewController ()
 
-- (NSURL *)appScheme;
-- (BOOL)isAppInstalled;
+- (NSString *)buttonTitleForStatus:(ProjectStatus)aStatus;
+- (void)performActionForStatus:(ProjectStatus)aStatus;
+- (void)goToScreenshots;
 
 @end
 
@@ -64,77 +65,134 @@
 {
   [super updateUI];
   
-  if (self.isAppInstalled)
-  {
-    [self.urlButton setTitle:@"Open" forState:UIControlStateNormal];
-  }
-  else if ([(ProjectCellData *)m_data url] != nil)
-  {
-    [self.urlButton setTitle:@"View In App Store" forState:UIControlStateNormal];
-  }
-  else if ([[(ProjectCellData *)m_data screenShots] count] > 0)
-  {
-    [self.urlButton setTitle:@"Screenshots" forState:UIControlStateNormal];
-  }
-  else
-  {
-    [self.urlButton setTitle:@"" forState:UIControlStateNormal];
-  }
+  NSUInteger status = [(ProjectCellData *)m_data status];
+  
+  [self.urlButton setTitle:[self buttonTitleForStatus:status] forState:UIControlStateNormal];
 }
 
 
 - (IBAction)urlPressed:(id)sender
 {
-  if (self.isAppInstalled && [(ProjectCellData *)m_data url] != nil)
-  {
-    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:@"Open" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Open App", @"View In App Store", nil];
-    [sheet showInView:self.view];
-  }
-  else if (self.isAppInstalled)
-  {
-    [[UIApplication sharedApplication] openURL:self.appScheme];
-  }
-  else if ([(ProjectCellData *)m_data url] != nil)
-  {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[(ProjectCellData *)m_data url]]];
-  }
-  else if ([[(ProjectCellData *)m_data screenShots] count] > 0)
-  {
-    ScreenShotsViewController * v = [[ScreenShotsViewController alloc] initWithScreenShots:[(ProjectCellData *)m_data screenShots]];
-    [self.navigationController pushViewController:v animated:YES];
-  }
+  NSUInteger status = [(ProjectCellData *)m_data status];
+  
+  [self performActionForStatus:status];
 }
 
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-  switch (buttonIndex)
+  NSString * title = [actionSheet buttonTitleAtIndex:buttonIndex];
+  
+  for (NSUInteger i = 0; i <= 4; i++)
   {
-    case 0:
-      [[UIApplication sharedApplication] openURL:self.appScheme];
+    if ([title isEqualToString:[self buttonTitleForStatus:(1 << i)]])
+    {
+      [self performActionForStatus:(1 << i)];
       break;
-      
-    case 1:
-      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[(ProjectCellData *)m_data url]]];
-      break;
-      
-    default:
-      break;
+    }
   }
 }
 
 
-- (NSURL *)appScheme
-{  
-  NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@://", [(ProjectCellData *)m_data scheme]]];
+- (NSString *)buttonTitleForStatus:(ProjectStatus)aStatus
+{
+  NSString * title = @"";
   
-  return url;
+  if (aStatus != 0)
+  {
+    if ((aStatus & (aStatus-1)) == 0) // one bit set or power of 2
+    {
+      switch (aStatus)
+      {
+        case ProjectAppStoreAvailable:
+          title = @"View In App Store";
+          break;
+          
+        case ProjectInstallAvailable:
+          title = @"Launch App";
+          break;
+          
+        case ProjectGitHubAvailable:
+          title = @"View In GitHub";
+          break;
+          
+        case ProjectScreenshotsAvailable:
+          title = @"Screenshots";
+          break;
+          
+        default:
+          break;
+      }
+    }
+    else
+    {
+      title = @"Open";
+    }
+  }
+  
+  return title;
 }
 
 
-- (BOOL)isAppInstalled
+- (void)performActionForStatus:(ProjectStatus)aStatus
 {
-  return [[UIApplication sharedApplication] canOpenURL:self.appScheme];
+  if ((aStatus & (aStatus-1)) != 0) //more than one bit set
+  {
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:@"Open" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:nil];
+    
+    if (aStatus & ProjectInstallAvailable)
+    {
+      [sheet addButtonWithTitle:[self buttonTitleForStatus:ProjectInstallAvailable]];
+    }
+    
+    if (aStatus & ProjectAppStoreAvailable)
+    {
+      [sheet addButtonWithTitle:[self buttonTitleForStatus:ProjectAppStoreAvailable]];
+    }
+    
+    if (aStatus & ProjectGitHubAvailable)
+    {
+      [sheet addButtonWithTitle:[self buttonTitleForStatus:ProjectGitHubAvailable]];
+    }
+    
+    if (aStatus & ProjectScreenshotsAvailable)
+    {
+      [sheet addButtonWithTitle:[self buttonTitleForStatus:ProjectScreenshotsAvailable]];
+    }
+    
+    [sheet showInView:self.view];
+  }
+  else
+  {
+    switch (aStatus)
+    {
+      case ProjectAppStoreAvailable:
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[(ProjectCellData *)m_data url]]];
+        break;
+        
+      case ProjectInstallAvailable:
+        [[UIApplication sharedApplication] openURL:[(ProjectCellData *)m_data appScheme]];
+        break;
+        
+      case ProjectGitHubAvailable:
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[(ProjectCellData *)m_data github]]];
+        break;
+        
+      case ProjectScreenshotsAvailable:
+        [self goToScreenshots];
+        break;
+        
+      default:
+        break;
+    }
+  }
+}
+
+
+- (void)goToScreenshots
+{
+  ScreenShotsViewController * v = [[ScreenShotsViewController alloc] initWithScreenShots:[(ProjectCellData *)m_data screenShots]];
+  [self.navigationController pushViewController:v animated:YES];
 }
 
 

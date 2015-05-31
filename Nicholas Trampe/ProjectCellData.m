@@ -24,7 +24,7 @@
 #import "ProjectCellData.h"
 
 @implementation ProjectCellData
-@synthesize url = m_url, scheme = m_scheme;
+@synthesize url = m_url, scheme = m_scheme, github = m_github;
 @synthesize screenShots = m_shots;
 
 - (id)initWithTitle:(NSString *)aTitle
@@ -34,6 +34,7 @@
               image:(NSString *)aImage
                 url:(NSString *)aURL
              scheme:(NSString *)aScheme
+             github:(NSString *)aGithub
         screenShots:(NSArray *)aScreenShots
 {
   self = [super initWithTitle:aTitle
@@ -45,6 +46,7 @@
   {
     m_url = aURL;
     m_scheme = aScheme;
+    m_github = aGithub;
     m_shots = [NSArray arrayWithArray:aScreenShots];
   }
   return self;
@@ -58,9 +60,52 @@
   {
     m_url = [aDictionary objectForKey:@"URL"];
     m_scheme = [aDictionary objectForKey:@"Scheme"];
+    m_github = [aDictionary objectForKey:@"github"];
     m_shots = [NSArray arrayWithArray:[aDictionary objectForKey:@"ScreenShots"]];
   }
   return self;
+}
+
+
+- (NSURL *)appScheme
+{  
+  NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@://", m_scheme]];
+  
+  return url;
+}
+
+
+- (BOOL)isAppInstalled
+{
+  return [[UIApplication sharedApplication] canOpenURL:self.appScheme];
+}
+
+
+- (ProjectStatus)status
+{
+  ProjectStatus status = 0;
+  
+  if (m_url != nil)
+  {
+    status = status | ProjectAppStoreAvailable;
+  }
+  
+  if (self.isAppInstalled)
+  {
+    status = status | ProjectInstallAvailable;
+  }
+  
+  if (m_github != nil)
+  {
+    status = status | ProjectGitHubAvailable;
+  }
+  
+  if (m_shots.count > 0)
+  {
+    status = status | ProjectScreenshotsAvailable;
+  }
+  
+  return status;
 }
 
 

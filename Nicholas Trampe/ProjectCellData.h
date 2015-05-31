@@ -23,13 +23,23 @@
 
 #import "MenuCellData.h"
 
+typedef NS_OPTIONS(NSUInteger, ProjectStatus)
+{
+  ProjectAppStoreAvailable      = (1 << 0), 
+  ProjectInstallAvailable       = (1 << 1), 
+  ProjectGitHubAvailable        = (1 << 2), 
+  ProjectScreenshotsAvailable   = (1 << 3) 
+};
+
+
 @interface ProjectCellData : MenuCellData
 {
   NSString * m_url;
   NSString * m_scheme;
+  NSString * m_github;
   NSArray * m_shots;
 }
-@property (strong, nonatomic) NSString * url, * scheme;
+@property (strong, nonatomic) NSString * url, * scheme, * github;
 @property (strong, nonatomic) NSArray * screenShots;
 
 - (id)initWithTitle:(NSString *)aTitle
@@ -39,6 +49,13 @@
               image:(NSString *)aImage
                 url:(NSString *)aURL
              scheme:(NSString *)aScheme
+             github:(NSString *)aGithub
         screenShots:(NSArray *)aScreenShots;
+
+
+- (NSURL *)appScheme;
+- (BOOL)isAppInstalled;
+
+- (ProjectStatus)status;
 
 @end
