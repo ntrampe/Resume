@@ -24,6 +24,7 @@
 #import <UIKit/UIKit.h>
 #import "MenuCellData.h"
 #import "DetailSlideShowView.h"
+#import "DetailWebView.h"
 
 @class DataController;
 
@@ -34,7 +35,7 @@
   UIImageView * m_textBG;
   BOOL m_firstView;
 }
-@property (weak) IBOutlet UITextView * textView;
+@property (weak) IBOutlet DetailWebView * webView;
 @property (weak) IBOutlet DetailSlideShowView * show;
 
 - (void)setCellData:(MenuCellData *)aCellData;

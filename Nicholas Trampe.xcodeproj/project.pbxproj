@@ -79,6 +79,7 @@
 		E1EA89B31A5C17F800F33C70 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1EA89B21A5C17F800F33C70 /* LICENSE.txt */; };
 		E1F00F391A659FCC00B72DE7 /* NTTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F00F381A659FCC00B72DE7 /* NTTheme.m */; };
 		E1F00F451A65A9F300B72DE7 /* themes in Resources */ = {isa = PBXBuildFile; fileRef = E1F00F441A65A9F300B72DE7 /* themes */; };
+		E1F43A5C1B1BC03500620316 /* DetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F43A5B1B1BC03500620316 /* DetailWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +198,8 @@
 		E1F00F371A659FCC00B72DE7 /* NTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTTheme.h; sourceTree = "<group>"; };
 		E1F00F381A659FCC00B72DE7 /* NTTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTTheme.m; sourceTree = "<group>"; };
 		E1F00F441A65A9F300B72DE7 /* themes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = themes; sourceTree = "<group>"; };
+		E1F43A5A1B1BC03500620316 /* DetailWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailWebView.h; sourceTree = "<group>"; };
+		E1F43A5B1B1BC03500620316 /* DetailWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +286,8 @@
 				010C387F18F1D0FE00D8D00B /* MenuCellData.m */,
 				010C388D18F1D6D300D8D00B /* DetailViewController.h */,
 				010C388E18F1D6D300D8D00B /* DetailViewController.m */,
+				E1F43A5A1B1BC03500620316 /* DetailWebView.h */,
+				E1F43A5B1B1BC03500620316 /* DetailWebView.m */,
 				010C38C918F1FDE900D8D00B /* DetailSlideShowView.h */,
 				010C38CA18F1FDE900D8D00B /* DetailSlideShowView.m */,
 				E11974021AD85BF6008B03D1 /* PersonalStatementViewController.h */,
@@ -654,6 +659,7 @@
 				017FB43318F5C0A60000985D /* ScreenShotsViewController.m in Sources */,
 				E15C763A1974B5C500CC249B /* NSData+MKBase64.m in Sources */,
 				E15C76421974B5C500CC249B /* Reachability.m in Sources */,
+				E1F43A5C1B1BC03500620316 /* DetailWebView.m in Sources */,
 				010C388918F1D60E00D8D00B /* ProjectCellData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -151,6 +151,30 @@
 }
 
 
+- (NSDictionary *)dataForTitle:(NSString *)aTitle
+{
+  NSDictionary * res = nil;
+  
+  for (NSString * key in m_data)
+  {
+    id obj = [m_data objectForKey:key];
+    if ([obj isKindOfClass:[NSArray class]])
+    {
+      NSArray * ary = (NSArray *)obj;
+      for (NSDictionary * dict in ary)
+      {
+        if ([[dict objectForKey:@"Title"] isEqualToString:aTitle])
+        {
+          res = dict;
+        }
+      }
+    }
+  }
+  
+  return res;
+}
+
+
 #pragma mark -
 #pragma mark Theme Getters
 
