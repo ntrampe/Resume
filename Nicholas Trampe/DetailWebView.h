@@ -15,6 +15,7 @@
 @interface DetailWebView : UIWebView <UIWebViewDelegate>
 {
   DataController * sharedDC;
+  MenuCellData * m_data;
 }
 
 - (void)loadHTMLWithData:(MenuCellData *)aData;

@@ -14,6 +14,7 @@
 @interface DetailWebView (Private) 
 
 - (void)commonInit;
+- (void)loadHTML;
 - (UIViewController*)viewController;
 
 @end
@@ -49,45 +50,9 @@
 
 - (void)loadHTMLWithData:(MenuCellData *)aData
 {
-  if (aData == NULL)
-    return;
+  m_data = aData;
   
-  NSString * result = @"";
-  
-  for (int i = 0; i < aData.bullets.count; i++)
-  {
-    result = [result stringByAppendingString:[NSString stringWithFormat:@"\u2022 %@%@",
-                                              [aData.bullets objectAtIndex:i],
-                                              (i == aData.bullets.count-1 ? @"" : @"</br></br>")]];
-  }
-  
-  //  [self.textView setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE : PHONE_FONT_SIZE)]];
-  
-  if (aData.header != nil)
-  {
-    result = [NSString stringWithFormat:@"%@%@%@", aData.header, (aData.bullets.count != 0 ? @"</br></br>" : @""), result];
-  }
-  
-  result = [result stringByReplacingOccurrencesOfString:@"\n" withString:@"</br>"];
-  
-  result = [NSString stringWithFormat:@"<html> \n"
-                                       "<head> \n"
-                                       "<style type=\"text/css\"> \n"
-                                       "body {font-family: \"%@\"; font-size: %d}\n"
-                                       "a:link{text-decoration: none; color: #0074D9;}"
-                                       "a:visited{text-decoration: none; color: #0074D9;}"
-                                       "a:hover{text-decoration: none; color: #0074D9;}"
-                                       "a:active{text-decoration: none; color: #0074D9;}"
-                                       "</style> \n"
-                                       "</head> \n"
-                                       "<body><div id='text'>%@</div></body> \n"
-                                       "</html>",
-                                       FONT_NAME,
-                                       (IS_PAD ? PAD_FONT_SIZE : PHONE_FONT_SIZE),
-                                       result];
-  
-  
-  [self loadHTMLString:result baseURL:nil];
+  [self performSelectorInBackground:@selector(loadHTML) withObject:nil];
 }
 
 
@@ -129,6 +94,13 @@
     
     [[[self viewController] navigationController] pushViewController:vc animated:YES];
   }
+  else
+  {
+    if ([[UIApplication sharedApplication] canOpenURL:request.URL])
+    {
+      [[UIApplication sharedApplication] openURL:request.URL];
+    }
+  }
   
   return NO;
 }
@@ -138,6 +110,49 @@
 {
   sharedDC = [DataController sharedDataController];
   self.delegate = self;
+}
+
+
+- (void)loadHTML
+{
+  if (m_data == NULL)
+    return;
+  
+  NSString * result = @"";
+  
+  for (int i = 0; i < m_data.bullets.count; i++)
+  {
+    result = [result stringByAppendingString:[NSString stringWithFormat:@"\u2022 %@%@",
+                                              [m_data.bullets objectAtIndex:i],
+                                              (i == m_data.bullets.count-1 ? @"" : @"</br></br>")]];
+  }
+  
+  //  [self.textView setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE : PHONE_FONT_SIZE)]];
+  
+  if (m_data.header != nil)
+  {
+    result = [NSString stringWithFormat:@"%@%@%@", m_data.header, (m_data.bullets.count != 0 ? @"</br></br>" : @""), result];
+  }
+  
+  result = [result stringByReplacingOccurrencesOfString:@"\n" withString:@"</br>"];
+  
+  result = [NSString stringWithFormat:@"<html> \n"
+            "<head> \n"
+            "<style type=\"text/css\"> \n"
+            "body {font-family: \"%@\"; font-size: %d}\n"
+            "a:link{text-decoration: none; color: #0074D9;}"
+            "a:visited{text-decoration: none; color: #0074D9;}"
+            "a:hover{text-decoration: none; color: #0074D9;}"
+            "a:active{text-decoration: none; color: #0074D9;}"
+            "</style> \n"
+            "</head> \n"
+            "<body><div id='text'>%@</div></body> \n"
+            "</html>",
+            FONT_NAME,
+            (IS_PAD ? PAD_FONT_SIZE : PHONE_FONT_SIZE),
+            result];
+  
+  [self loadHTMLString:result baseURL:nil];
 }
 
 
