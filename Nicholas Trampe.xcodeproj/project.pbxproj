@@ -35,13 +35,6 @@
 		017FB43418F5C0A60000985D /* ScreenShotsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017FB43218F5C0A60000985D /* ScreenShotsViewController.xib */; };
 		017FB43818F5C12B0000985D /* ShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017FB43618F5C12B0000985D /* ShotViewController.m */; };
 		017FB43918F5C12B0000985D /* ShotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017FB43718F5C12B0000985D /* ShotViewController.xib */; };
-		017FB60218F5DA770000985D /* default_568.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 017FB5FB18F5DA770000985D /* default_568.PNG */; };
-		017FB60318F5DA770000985D /* default_ipad_portrait.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 017FB5FC18F5DA770000985D /* default_ipad_portrait.PNG */; };
-		017FB60418F5DA770000985D /* default_ipad_portrait@2x.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 017FB5FD18F5DA770000985D /* default_ipad_portrait@2x.PNG */; };
-		017FB60618F5DA770000985D /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 017FB5FF18F5DA770000985D /* default@2x.png */; };
-		017FB60918F5DB6A0000985D /* default_568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 017FB60818F5DB6A0000985D /* default_568h.png */; };
-		017FB60C18F5DE170000985D /* default_ipad_landscape.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 017FB60A18F5DE170000985D /* default_ipad_landscape.PNG */; };
-		017FB60D18F5DE170000985D /* default_ipad_landscape@2x.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 017FB60B18F5DE170000985D /* default_ipad_landscape@2x.PNG */; };
 		017FB60F18F5DE4C0000985D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 017FB60E18F5DE4C0000985D /* Images.xcassets */; };
 		0182DA7D18F8F56D00C75EE3 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 0182DA6E18F8F56D00C75EE3 /* Icon-40.png */; };
 		0182DA7E18F8F56D00C75EE3 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0182DA6F18F8F56D00C75EE3 /* Icon-40@2x.png */; };
@@ -139,13 +132,6 @@
 		017FB43518F5C12B0000985D /* ShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotViewController.h; sourceTree = "<group>"; };
 		017FB43618F5C12B0000985D /* ShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotViewController.m; sourceTree = "<group>"; };
 		017FB43718F5C12B0000985D /* ShotViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShotViewController.xib; sourceTree = "<group>"; };
-		017FB5FB18F5DA770000985D /* default_568.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_568.PNG; sourceTree = "<group>"; };
-		017FB5FC18F5DA770000985D /* default_ipad_portrait.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_ipad_portrait.PNG; sourceTree = "<group>"; };
-		017FB5FD18F5DA770000985D /* default_ipad_portrait@2x.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_ipad_portrait@2x.PNG"; sourceTree = "<group>"; };
-		017FB5FF18F5DA770000985D /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
-		017FB60818F5DB6A0000985D /* default_568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_568h.png; sourceTree = "<group>"; };
-		017FB60A18F5DE170000985D /* default_ipad_landscape.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_ipad_landscape.PNG; sourceTree = "<group>"; };
-		017FB60B18F5DE170000985D /* default_ipad_landscape@2x.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_ipad_landscape@2x.PNG"; sourceTree = "<group>"; };
 		017FB60E18F5DE4C0000985D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0182DA6E18F8F56D00C75EE3 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		0182DA6F18F8F56D00C75EE3 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
@@ -399,13 +385,6 @@
 		017FB5ED18F5D9130000985D /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				017FB5FB18F5DA770000985D /* default_568.PNG */,
-				017FB60818F5DB6A0000985D /* default_568h.png */,
-				017FB5FC18F5DA770000985D /* default_ipad_portrait.PNG */,
-				017FB5FD18F5DA770000985D /* default_ipad_portrait@2x.PNG */,
-				017FB60A18F5DE170000985D /* default_ipad_landscape.PNG */,
-				017FB60B18F5DE170000985D /* default_ipad_landscape@2x.PNG */,
-				017FB5FF18F5DA770000985D /* default@2x.png */,
 				E13C78DD1A5ED3CA005F629D /* Launch Screen.xib */,
 			);
 			name = Launch;
@@ -548,7 +527,7 @@
 		010C382D18F1CC0E00D8D00B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Nicholas Trampe";
 				TargetAttributes = {
 					010C383418F1CC0E00D8D00B = {
@@ -586,9 +565,7 @@
 				E13C78DE1A5ED3CA005F629D /* Launch Screen.xib in Resources */,
 				E1EA89B31A5C17F800F33C70 /* LICENSE.txt in Resources */,
 				0182DA7F18F8F56D00C75EE3 /* Icon-60@2x.png in Resources */,
-				017FB60318F5DA770000985D /* default_ipad_portrait.PNG in Resources */,
 				0182DA8218F8F56D00C75EE3 /* Icon-76.png in Resources */,
-				017FB60918F5DB6A0000985D /* default_568h.png in Resources */,
 				0182DA8418F8F56D00C75EE3 /* Icon-Small-50.png in Resources */,
 				0182DA8018F8F56D00C75EE3 /* Icon-72.png in Resources */,
 				0182DA8618F8F56D00C75EE3 /* Icon-Small.png in Resources */,
@@ -597,20 +574,15 @@
 				0182DA8F18F8F75C00C75EE3 /* Icon@2x.png in Resources */,
 				0182DA8518F8F56D00C75EE3 /* Icon-Small-50@2x.png in Resources */,
 				0182DA8118F8F56D00C75EE3 /* Icon-72@2x.png in Resources */,
-				017FB60618F5DA770000985D /* default@2x.png in Resources */,
 				017FB60F18F5DE4C0000985D /* Images.xcassets in Resources */,
-				017FB60D18F5DE170000985D /* default_ipad_landscape@2x.PNG in Resources */,
 				0182DA7E18F8F56D00C75EE3 /* Icon-40@2x.png in Resources */,
 				0182DA8718F8F56D00C75EE3 /* Icon-Small@2x.png in Resources */,
 				017FB43918F5C12B0000985D /* ShotViewController.xib in Resources */,
 				E1F00F451A65A9F300B72DE7 /* themes in Resources */,
 				0182DA8B18F8F56D00C75EE3 /* iTunesArtwork@2x in Resources */,
-				017FB60218F5DA770000985D /* default_568.PNG in Resources */,
 				0182DA8318F8F56D00C75EE3 /* Icon-76@2x.png in Resources */,
 				010C384C18F1CC0E00D8D00B /* Main_iPhone.storyboard in Resources */,
-				017FB60C18F5DE170000985D /* default_ipad_landscape.PNG in Resources */,
 				010C384318F1CC0E00D8D00B /* InfoPlist.strings in Resources */,
-				017FB60418F5DA770000985D /* default_ipad_portrait@2x.PNG in Resources */,
 				017FB43418F5C0A60000985D /* ScreenShotsViewController.xib in Resources */,
 				0182DA8A18F8F56D00C75EE3 /* iTunesArtwork in Resources */,
 			);
@@ -728,6 +700,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -799,6 +772,7 @@
 				INFOPLIST_FILE = "Nicholas Trampe/Nicholas Trampe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.offkilterstudios.resume;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -823,6 +797,7 @@
 				INFOPLIST_FILE = "Nicholas Trampe/Nicholas Trampe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.offkilterstudios.resume;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -846,6 +821,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Nicholas TrampeTests/Nicholas TrampeTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicholastrampe.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -864,6 +840,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nicholas Trampe/Nicholas Trampe-Prefix.pch";
 				INFOPLIST_FILE = "Nicholas TrampeTests/Nicholas TrampeTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicholastrampe.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

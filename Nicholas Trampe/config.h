@@ -31,7 +31,7 @@
 #define PAD_FONT_SIZE 28
 
 #define DATA_DOWNLOADED_NOTIFICATION @"DATA_DOWNLOADED_NOTIFICATION"
-#define SERVER_ROOT_DIRECTORY @"http://www.offkilterstudios.com/resume/"
+#define SERVER_ROOT_DIRECTORY @"http://www.nicholastrampe.com/resume/"
 #define SERVER_IMAGE_DIRECTORY [SERVER_ROOT_DIRECTORY stringByAppendingString:@"images/"]
 #define SERVER_DATA_FILE [SERVER_ROOT_DIRECTORY stringByAppendingString:@"data.plist"]
 
