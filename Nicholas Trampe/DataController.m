@@ -121,6 +121,12 @@
 }
 
 
+- (NSString *)themeName
+{
+  return [self.data objectForKey:@"Theme"];
+}
+
+
 - (NSArray *)projects
 {
   return [self.data objectForKey:@"Projects"];
@@ -270,7 +276,7 @@
   NSMutableDictionary * dict = [NSMutableDictionary dictionaryWithContentsOfFile:[self filePath]];
   m_data = [NSMutableDictionary dictionaryWithDictionary:dict];
   
-  [self loadTheme:@"Default"];
+  [self loadTheme:[self themeName]];
 }
 
 

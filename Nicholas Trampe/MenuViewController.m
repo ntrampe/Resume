@@ -156,6 +156,7 @@
   
   [cell.textLabel setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE : PHONE_FONT_SIZE)]];
   [cell.detailTextLabel setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE - 8 : PHONE_FONT_SIZE - 4)]];
+  [cell.imageView setImage:sharedDC.theme.placeholder];
   
   if (data.image != nil)
   {

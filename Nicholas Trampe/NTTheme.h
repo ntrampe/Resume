@@ -16,6 +16,7 @@
 
 - (id)initWithThemeName:(NSString *)aThemeName;
 
+- (NSString *)textColorString;
 - (UIColor *)textColor;
 - (UIColor *)navigationBarColor;
 - (NSArray *)buttonColors;

@@ -31,9 +31,15 @@
 }
 
 
+- (NSString *)textColorString
+{
+  return [m_theme objectForKey:@"Text Color"];
+}
+
+
 - (UIColor *)textColor
 {
-  NSString * c = [m_theme objectForKey:@"Text Color"];
+  NSString * c = [self textColorString];
   if (c != nil)
     return [self colorFromString:c];
   return [UIColor blackColor];

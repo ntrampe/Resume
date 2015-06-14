@@ -80,7 +80,10 @@
 {
   [super viewDidAppear:animated];
   
-  [self show];
+  if (!m_first)
+  {
+    [self show];
+  }
 }
 
 
@@ -171,6 +174,8 @@
 {
   [self.slide setImageURLString:sharedDC.picture];
   self.title = sharedDC.name;
+  
+  [self show];
 }
 
 

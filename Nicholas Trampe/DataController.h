@@ -41,6 +41,7 @@
 - (NSString *)name;
 - (NSString *)picture;
 - (NSString *)information;
+- (NSString *)themeName;
 - (NSArray *)projects;
 - (NSArray *)educationalBackgrounds;
 - (NSArray *)professionalBackgrounds;
