@@ -40,26 +40,6 @@
   
   sharedDC = [DataController sharedDataController];
   
-  [self setNavigationBarTitleColor:sharedDC.theme.textColor];
-  self.navigationController.navigationBar.barTintColor = sharedDC.theme.navigationBarColor;
-  self.view.backgroundColor = sharedDC.theme.backgroundColor;
-  
-  int count = 0;
-  
-  for (id child in self.view.subviews)
-  {
-    if ([child isKindOfClass:[UIButton class]])
-    {
-      [[(UIButton *)child titleLabel] setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE + 6 : PHONE_FONT_SIZE + 4)]];
-      [[(UIButton *)child layer] setBorderWidth:(IS_PAD ? 5 : 3)];
-      [[(UIButton *)child layer] setBorderColor:[[UIColor whiteColor] CGColor]];
-      [(UIButton *)child setBackgroundColor:sharedDC.theme.buttonColors[count]];
-      [(UIButton *)child setTag:count];
-      [(UIButton *)child setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-      count++;
-    }
-  }
-  
   [self.slide setOffset:(self.view.frame.size.height > 480 ? 20 : 10)];
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadDataHandler) name:DATA_DOWNLOADED_NOTIFICATION object:nil];
@@ -174,6 +154,26 @@
 {
   [self.slide setImageURLString:sharedDC.picture];
   self.title = sharedDC.name;
+  
+  [self setNavigationBarTitleColor:sharedDC.theme.textColor];
+  self.navigationController.navigationBar.barTintColor = sharedDC.theme.navigationBarColor;
+  self.view.backgroundColor = sharedDC.theme.backgroundColor;
+  
+  int count = 0;
+  
+  for (id child in self.view.subviews)
+  {
+    if ([child isKindOfClass:[UIButton class]])
+    {
+      [[(UIButton *)child titleLabel] setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE + 6 : PHONE_FONT_SIZE + 4)]];
+      [[(UIButton *)child layer] setBorderWidth:(IS_PAD ? 5 : 3)];
+      [[(UIButton *)child layer] setBorderColor:[[UIColor whiteColor] CGColor]];
+      [(UIButton *)child setBackgroundColor:sharedDC.theme.buttonColors[count]];
+      [(UIButton *)child setTag:count];
+      [(UIButton *)child setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+      count++;
+    }
+  }
   
   [self show];
 }
