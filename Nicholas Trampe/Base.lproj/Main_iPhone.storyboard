@@ -130,7 +130,13 @@
                             <constraint firstItem="60z-j3-Wwd" firstAttribute="top" secondItem="RRY-st-EjA" secondAttribute="bottom" constant="8" id="ym9-cT-GdA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="M7l-xN-kVD"/>
+                    <navigationItem key="navigationItem" id="M7l-xN-kVD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="ulm-0C-eHc">
+                            <connections>
+                                <action selector="refreshPressed:" destination="vXZ-lx-hvc" id="juC-mB-5hc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="slide" destination="X9U-kg-m7V" id="a4L-FC-cly"/>
                     </connections>

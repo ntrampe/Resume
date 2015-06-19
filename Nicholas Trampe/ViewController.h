@@ -38,6 +38,7 @@
 - (void)hide;
 - (void)show;
 - (void)downloadDataHandler;
+- (IBAction)refreshPressed:(id)sender;
 
 - (void)setNavigationBarTitleColor:(UIColor *)aColor;
 

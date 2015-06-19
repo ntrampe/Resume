@@ -90,6 +90,18 @@
 }
 
 
+- (void)resetBackground
+{
+  if (m_bg != nil)
+  {
+    [m_bg removeFromSuperview];
+    m_bg = nil;
+  }
+  
+  [self addBackground];
+}
+
+
 - (void)addBackground
 {
   //Quartz2D can make scrolling slow on older devices

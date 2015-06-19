@@ -93,6 +93,7 @@
 
 - (IBAction)refreshPressed:(id)sender
 {
+  [sharedDC.networkEngine emptyCache];
   [sharedDC downloadData];
 }
 
@@ -152,6 +153,7 @@
 
 - (void)downloadDataHandler
 {
+  [self.slide resetBackground];
   [self.slide setImageURLString:sharedDC.picture];
   self.title = sharedDC.name;
   

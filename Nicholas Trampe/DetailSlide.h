@@ -35,4 +35,6 @@
 - (void)setImage:(UIImage *)aImage;
 - (void)setOffset:(float)aOffset;
 
+- (void)resetBackground;
+
 @end
