@@ -23,6 +23,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class DetailSlideShowView;
+
+@protocol DetailSlideShowViewDelegate <NSObject>
+@optional
+- (void)detailSlideShowView:(DetailSlideShowView *)sender didDisplayImage:(UIImage *)aImage;
+- (void)detailSlideShowViewDidDismissImage:(DetailSlideShowView *)sender;
+
+@end
+
 @interface DetailSlideShowView : UIView
 {
   NSMutableArray * m_slides; //Detail Slides
@@ -31,7 +40,9 @@
   
   float m_velocity;
   float m_size;
+  BOOL m_dragged;
 }
+@property (weak) id<DetailSlideShowViewDelegate> delegate;
 
 - (id)initWithImages:(NSArray *)aImages frame:(CGRect)aFrame;
 

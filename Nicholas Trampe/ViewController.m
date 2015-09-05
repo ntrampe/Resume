@@ -98,6 +98,12 @@
 }
 
 
+- (IBAction)picturePressed:(id)sender
+{
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@cv.pdf", SERVER_ROOT_DIRECTORY]]];
+}
+
+
 - (void)hide
 {
   for (UIView * child in self.view.subviews)

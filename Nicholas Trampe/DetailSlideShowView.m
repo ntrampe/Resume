@@ -28,6 +28,8 @@
 
 - (void)addDistance:(float)aDistance;
 
+- (void)holdGestureHandler:(UITouch *)aTouch;
+
 @end
 
 @implementation DetailSlideShowView
@@ -134,12 +136,25 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+  m_dragged = NO;
   [self stopUpdates];
+  
+  [self performSelector:@selector(holdGestureHandler:) withObject:[touches anyObject] afterDelay:0.2];
 }
 
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+  if (m_dragged == NO)
+  {
+//    if ([self.delegate respondsToSelector:@selector(detailSlideShowViewDidDismissImage:)])
+//    {
+//      [self.delegate detailSlideShowViewDidDismissImage:self];
+//    }
+    
+    m_dragged = YES;
+  }
+  
   UITouch * touch =     [touches anyObject];
   float location =      [touch locationInView:touch.view].x;
   float prevLocation =  [touch previousLocationInView:touch.view].x;
@@ -154,6 +169,11 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
   [self scheduleUpdates];
+  
+  if ([self.delegate respondsToSelector:@selector(detailSlideShowViewDidDismissImage:)])
+  {
+    [self.delegate detailSlideShowViewDidDismissImage:self];
+  }
 }
 
 
@@ -200,6 +220,26 @@
     if (load)
     {
       [s setImageURLString:[m_images objectAtIndex:s.index]];
+    }
+  }
+}
+
+
+- (void)holdGestureHandler:(UITouch *)aTouch
+{
+  if (!m_dragged)
+  {
+    DetailSlide* s = (DetailSlide *)aTouch.view;
+    
+    if (s != nil)
+    { 
+      if (self.delegate != nil)
+      {
+        if ([self.delegate respondsToSelector:@selector(detailSlideShowView:didDisplayImage:)])
+        {
+          [self.delegate detailSlideShowView:self didDisplayImage:s.image];
+        }
+      }
     }
   }
 }

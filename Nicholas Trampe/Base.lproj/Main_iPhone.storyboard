@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KI9-3W-Ido">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KI9-3W-Ido">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -106,6 +106,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="X9U-kg-m7V" secondAttribute="height" multiplier="1:1" id="rzA-fK-uCQ"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="WTA-th-A6K" appends="YES" id="8lJ-UW-WPD"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -142,6 +145,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WTA-th-A6K">
+                    <connections>
+                        <action selector="picturePressed:" destination="vXZ-lx-hvc" id="RUn-0S-IG9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="550" y="616"/>
         </scene>
@@ -409,20 +417,29 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </webView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfo-yB-bJC">
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="vj3-BR-gWs" secondAttribute="trailing" constant="4" id="Gaq-bL-9QP"/>
                             <constraint firstItem="fsP-kB-h7F" firstAttribute="top" secondItem="vj3-BR-gWs" secondAttribute="bottom" constant="20" id="Hns-l5-uj6"/>
+                            <constraint firstItem="Cfo-yB-bJC" firstAttribute="top" secondItem="hdF-HX-AMZ" secondAttribute="bottom" id="KQO-8Y-OAT"/>
+                            <constraint firstItem="Cfo-yB-bJC" firstAttribute="leading" secondItem="GTB-jf-V6o" secondAttribute="leadingMargin" constant="-20" id="NMV-0h-wOa"/>
+                            <constraint firstItem="fsP-kB-h7F" firstAttribute="top" secondItem="Cfo-yB-bJC" secondAttribute="bottom" id="OAC-5O-Bkp"/>
                             <constraint firstAttribute="trailing" secondItem="M3m-Dt-Md9" secondAttribute="trailing" id="Oa7-9v-1MI"/>
                             <constraint firstItem="M3m-Dt-Md9" firstAttribute="top" secondItem="hdF-HX-AMZ" secondAttribute="bottom" constant="16" id="TQB-w7-ye3"/>
                             <constraint firstItem="M3m-Dt-Md9" firstAttribute="leading" secondItem="GTB-jf-V6o" secondAttribute="leading" id="fHG-wc-Yu8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cfo-yB-bJC" secondAttribute="trailing" constant="-20" id="nHj-zK-1Qj"/>
                             <constraint firstItem="vj3-BR-gWs" firstAttribute="top" secondItem="M3m-Dt-Md9" secondAttribute="bottom" constant="8" id="rVM-k6-YOX"/>
                             <constraint firstItem="vj3-BR-gWs" firstAttribute="leading" secondItem="GTB-jf-V6o" secondAttribute="leadingMargin" constant="4" id="s7f-aJ-05Z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wfg-ae-Rjt"/>
                     <connections>
+                        <outlet property="fullScreenImageView" destination="Cfo-yB-bJC" id="uN0-zT-evy"/>
                         <outlet property="show" destination="M3m-Dt-Md9" id="d5y-eY-c18"/>
                         <outlet property="webView" destination="vj3-BR-gWs" id="LV7-uH-czk"/>
                     </connections>

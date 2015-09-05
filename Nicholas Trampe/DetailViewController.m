@@ -52,6 +52,8 @@
   
   self.view.backgroundColor = sharedDC.theme.backgroundColor;
   
+  self.show.delegate = self;
+  
   m_firstView = YES;
 }
 
@@ -179,6 +181,25 @@
     self.title = m_data.title;
   
   [self.webView loadHTMLWithData:m_data];
+}
+
+
+- (void)detailSlideShowView:(DetailSlideShowView *)sender didDisplayImage:(UIImage *)aImage
+{
+  [self.fullScreenImageView setImage:aImage];
+  
+  [UIView animateWithDuration:0.2f animations:^
+  {
+    self.fullScreenImageView.alpha = 1.0f;
+  }];
+}
+
+
+- (void)detailSlideShowViewDidDismissImage:(DetailSlideShowView *)sender
+{
+  [UIView animateWithDuration:0.2f animations:^{
+    self.fullScreenImageView.alpha = 0.0f;
+  }];
 }
 
 

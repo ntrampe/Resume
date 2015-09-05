@@ -90,6 +90,12 @@
 }
 
 
+- (UIImage *)image
+{
+  return [m_image image];
+}
+
+
 - (void)resetBackground
 {
   if (m_bg != nil)

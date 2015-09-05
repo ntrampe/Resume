@@ -28,7 +28,7 @@
 
 @class DataController;
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <DetailSlideShowViewDelegate>
 {
   DataController * sharedDC;
   MenuCellData * m_data;
@@ -37,6 +37,7 @@
 }
 @property (weak) IBOutlet DetailWebView * webView;
 @property (weak) IBOutlet DetailSlideShowView * show;
+@property (weak) IBOutlet UIImageView * fullScreenImageView;
 
 - (void)setCellData:(MenuCellData *)aCellData;
 - (MenuCellData *)cellData;
