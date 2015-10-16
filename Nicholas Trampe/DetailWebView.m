@@ -141,7 +141,7 @@
   result = [NSString stringWithFormat:@"<html> \n"
             "<head> \n"
             "<style type=\"text/css\"> \n"
-            "body {font-family: \"%@\"; font-size: %d; color: rgb(%@);}\n"
+            "body {font-family: \"%@\"; font-size: %f; color: rgb(%@);}\n"
             "a:link{text-decoration: none; color: #0074D9;}\n"
             "a:visited{text-decoration: none; color: #0074D9;}\n"
             "a:hover{text-decoration: none; color: #0074D9;}\n"
@@ -150,10 +150,11 @@
             "</head> \n"
             "<body><div id='text'>%@</div></body> \n"
             "</html>",
-            FONT_NAME,
-            (IS_PAD ? PAD_FONT_SIZE : PHONE_FONT_SIZE),
+            [[UIFont preferredFontForTextStyle:UIFontTextStyleBody] fontName],
+            [[UIFont preferredFontForTextStyle:UIFontTextStyleBody] pointSize],
             sharedDC.theme.textColorString,
             result];
+  
   
   [self loadHTMLString:result baseURL:nil];
 }

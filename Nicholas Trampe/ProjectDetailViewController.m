@@ -46,6 +46,8 @@
   {
     [self.imageView setImageFromURL:[NSURL URLWithString:m_data.image] placeHolderImage:sharedDC.theme.placeholder animation:YES];
   }
+  
+  [self.urlButton.titleLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]];
 }
 
 

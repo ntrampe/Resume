@@ -173,7 +173,8 @@
   {
     if ([child isKindOfClass:[UIButton class]])
     {
-      [[(UIButton *)child titleLabel] setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE + 6 : PHONE_FONT_SIZE + 4)]];
+//      [[(UIButton *)child titleLabel] setFont:[UIFont fontWithName:FONT_NAME size:(IS_PAD ? PAD_FONT_SIZE + 6 : PHONE_FONT_SIZE + 4)]];
+      [[(UIButton *)child titleLabel] setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]];
       [[(UIButton *)child layer] setBorderWidth:(IS_PAD ? 5 : 3)];
       [[(UIButton *)child layer] setBorderColor:[[UIColor whiteColor] CGColor]];
       [(UIButton *)child setBackgroundColor:sharedDC.theme.buttonColors[count]];
@@ -189,14 +190,16 @@
 
 - (void)setNavigationBarTitleColor:(UIColor *)aColor
 {
+  //[UIFont fontWithName:FONT_NAME size:PHONE_FONT_SIZE]
+  
   [self.navigationController.navigationBar setTitleTextAttributes:
    [NSDictionary dictionaryWithObjectsAndKeys:
-    [UIFont fontWithName:FONT_NAME size:PHONE_FONT_SIZE], NSFontAttributeName,
+    [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline], NSFontAttributeName,
     aColor, NSForegroundColorAttributeName, nil]];
   
   [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:
    [NSDictionary dictionaryWithObjectsAndKeys:
-    [UIFont fontWithName:FONT_NAME size:PHONE_FONT_SIZE], NSFontAttributeName,
+    [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline], NSFontAttributeName,
     aColor, NSForegroundColorAttributeName, nil]
     forState:UIControlStateNormal];
   
